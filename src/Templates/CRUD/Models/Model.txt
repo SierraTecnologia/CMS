@@ -2,7 +2,7 @@
 
 namespace _namespace_model_;
 
-use Grafite\Cms\Models\CmsModel;
+use SierraTecnologia\Cms\Models\CmsModel;
 
 class _camel_case_ extends CmsModel
 {

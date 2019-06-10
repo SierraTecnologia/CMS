@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
 class CryptoService
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Providers;
+namespace SierraTecnologia\Cms\Providers;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;

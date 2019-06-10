@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
-use Grafite\Cms\Models\FAQ;
+use SierraTecnologia\Cms\Models\FAQ;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FAQRequest extends FormRequest

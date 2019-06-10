@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
-use Grafite\Cms\Models\Promotion;
+use SierraTecnologia\Cms\Models\Promotion;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PromotionRequest extends FormRequest

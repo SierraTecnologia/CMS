@@ -1,13 +1,13 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
-use Grafite\Cms\Services\AnalyticsService;
+use SierraTecnologia\Cms\Services\AnalyticsService;
 use Illuminate\Support\Facades\Schema;
 use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;
 
-class DashboardController extends GrafiteCmsController
+class DashboardController extends SierraTecnologiaCmsController
 {
     protected $service;
 

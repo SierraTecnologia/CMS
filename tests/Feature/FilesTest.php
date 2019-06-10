@@ -11,7 +11,7 @@ class FilesTest extends TestCase
         parent::setUp();
         $this->withoutMiddleware();
         $this->withoutEvents();
-        factory(\Grafite\Cms\Models\File::class)->create();
+        factory(\SierraTecnologia\Cms\Models\File::class)->create();
     }
 
     /*
@@ -49,7 +49,7 @@ class FilesTest extends TestCase
     public function testStore()
     {
         $uploadedFile = new \Symfony\Component\HttpFoundation\File\UploadedFile(__DIR__.'/../fixtures/test-file.txt', 'test-file.txt');
-        $file = factory(\Grafite\Cms\Models\File::class)->make([
+        $file = factory(\SierraTecnologia\Cms\Models\File::class)->make([
             'id' => 2,
             'location' => [
                 'file_a' => [
@@ -74,7 +74,7 @@ class FilesTest extends TestCase
 
     public function testUpdate()
     {
-        $file = (array) factory(\Grafite\Cms\Models\File::class)->make(['id' => 3, 'title' => 'dumber']);
+        $file = (array) factory(\SierraTecnologia\Cms\Models\File::class)->make(['id' => 3, 'title' => 'dumber']);
         $response = $this->call('PATCH', 'cms/files/3', $file);
 
         $this->assertEquals(302, $response->getStatusCode());
@@ -84,7 +84,7 @@ class FilesTest extends TestCase
     public function testDelete()
     {
         \Storage::put('test-file.txt', 'what is this');
-        $file = factory(\Grafite\Cms\Models\File::class)->make([
+        $file = factory(\SierraTecnologia\Cms\Models\File::class)->make([
             'id' => 2,
             'location' => [
                 'file_a' => [

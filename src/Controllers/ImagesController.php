@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Config;
 use CryptoService;
@@ -8,13 +8,13 @@ use FileService;
 use Illuminate\Http\Request;
 use Cms;
 use Storage;
-use Grafite\Cms\Models\Image;
-use Grafite\Cms\Repositories\ImageRepository;
-use Grafite\Cms\Requests\ImagesRequest;
-use Grafite\Cms\Services\CmsResponseService;
-use Grafite\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Models\Image;
+use SierraTecnologia\Cms\Repositories\ImageRepository;
+use SierraTecnologia\Cms\Requests\ImagesRequest;
+use SierraTecnologia\Cms\Services\CmsResponseService;
+use SierraTecnologia\Cms\Services\ValidationService;
 
-class ImagesController extends GrafiteCmsController
+class ImagesController extends SierraTecnologiaCmsController
 {
     public function __construct(ImageRepository $repository)
     {

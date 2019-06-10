@@ -10,7 +10,7 @@
          stopOnFailure="false"
 >
     <testsuites>
-        <testsuite name="Grafite CMS Tests">
+        <testsuite name="SierraTecnologia CMS Tests">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

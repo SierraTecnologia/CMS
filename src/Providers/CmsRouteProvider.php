@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Providers;
+namespace SierraTecnologia\Cms\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
@@ -14,7 +14,7 @@ class CmsRouteProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Grafite\Cms\Controllers';
+    protected $namespace = 'SierraTecnologia\Cms\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

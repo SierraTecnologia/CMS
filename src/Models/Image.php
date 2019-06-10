@@ -1,13 +1,13 @@
 <?php
 
-namespace Grafite\Cms\Models;
+namespace SierraTecnologia\Cms\Models;
 
 use Carbon\Carbon;
 use Config;
 use Exception;
 use FileService;
-use Grafite\Cms\Models\CmsModel;
-use Grafite\Cms\Services\AssetService;
+use SierraTecnologia\Cms\Models\CmsModel;
+use SierraTecnologia\Cms\Services\AssetService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Intervention\Image\ImageManagerStatic as InterventionImage;

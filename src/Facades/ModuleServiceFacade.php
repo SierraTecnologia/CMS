@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Facades;
+namespace SierraTecnologia\Cms\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

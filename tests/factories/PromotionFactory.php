@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Grafite\Cms\Models\Promotion::class, function (Faker\Generator $faker) {
+$factory->define(\SierraTecnologia\Cms\Models\Promotion::class, function (Faker\Generator $faker) {
     return [
         'id' => 1,
         'published_at' => $faker->datetime()->format('Y-m-d H:i'),

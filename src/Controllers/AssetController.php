@@ -1,12 +1,12 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Illuminate\Filesystem\Filesystem;
-use Grafite\Cms\Services\AssetService;
-use Grafite\Cms\Controllers\GrafiteCmsController;
+use SierraTecnologia\Cms\Services\AssetService;
+use SierraTecnologia\Cms\Controllers\SierraTecnologiaCmsController;
 
-class AssetController extends GrafiteCmsController
+class AssetController extends SierraTecnologiaCmsController
 {
     public function __construct(AssetService $service)
     {

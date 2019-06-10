@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
-use Grafite\Cms\Models\Link;
+use SierraTecnologia\Cms\Models\Link;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LinksRequest extends FormRequest

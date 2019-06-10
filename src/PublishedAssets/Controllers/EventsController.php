@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
-use Grafite\Cms\Services\EventService;
-use Grafite\Cms\Repositories\EventRepository;
+use SierraTecnologia\Cms\Services\EventService;
+use SierraTecnologia\Cms\Repositories\EventRepository;
 
 class EventsController extends Controller
 {

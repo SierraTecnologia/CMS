@@ -11,9 +11,9 @@ class LinksTest extends TestCase
         parent::setUp();
         $this->withoutMiddleware();
         $this->withoutEvents();
-        factory(\Grafite\Cms\Models\Menu::class)->create();
-        factory(\Grafite\Cms\Models\Link::class)->create();
-        factory(\Grafite\Cms\Models\Link::class)->make(['id' => 1]);
+        factory(\SierraTecnologia\Cms\Models\Menu::class)->create();
+        factory(\SierraTecnologia\Cms\Models\Link::class)->create();
+        factory(\SierraTecnologia\Cms\Models\Link::class)->make(['id' => 1]);
     }
 
     /*
@@ -43,7 +43,7 @@ class LinksTest extends TestCase
 
     public function testStore()
     {
-        $link = factory(\Grafite\Cms\Models\Link::class)->make(['id' => 89]);
+        $link = factory(\SierraTecnologia\Cms\Models\Link::class)->make(['id' => 89]);
         $response = $this->call('POST', '/cms/links', $link->toArray());
 
         $this->assertEquals(302, $response->getStatusCode());

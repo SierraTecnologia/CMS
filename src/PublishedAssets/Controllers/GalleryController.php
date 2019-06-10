@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Cms;
 
 use Config;
 use App\Http\Controllers\Controller;
-use Grafite\Cms\Repositories\ImageRepository;
+use SierraTecnologia\Cms\Repositories\ImageRepository;
 
 class GalleryController extends Controller
 {

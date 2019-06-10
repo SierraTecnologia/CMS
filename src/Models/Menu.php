@@ -1,8 +1,8 @@
 <?php
 
-namespace Grafite\Cms\Models;
+namespace SierraTecnologia\Cms\Models;
 
-use Grafite\Cms\Models\CmsModel;
+use SierraTecnologia\Cms\Models\CmsModel;
 
 class Menu extends CmsModel
 {

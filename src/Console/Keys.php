@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Console;
+namespace SierraTecnologia\Cms\Console;
 
 use Illuminate\Console\Command;
 
@@ -18,7 +18,7 @@ class Keys extends Command
      *
      * @var string
      */
-    protected $description = 'Grafite CMS will generate keys for the API Internal and External access';
+    protected $description = 'SierraTecnologia CMS will generate keys for the API Internal and External access';
 
     /**
      * Execute the console command.

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
-use Grafite\Cms\Repositories\FAQRepository;
+use SierraTecnologia\Cms\Repositories\FAQRepository;
 
 class FaqController extends Controller
 {

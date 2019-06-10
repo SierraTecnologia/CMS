@@ -1,11 +1,11 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class RssController extends GrafiteCmsController
+class RssController extends SierraTecnologiaCmsController
 {
     protected $repo;
 
@@ -18,7 +18,7 @@ class RssController extends GrafiteCmsController
         $this->module = str_singular($url);
 
         if (! empty($this->module)) {
-            $this->repo = app('Grafite\Cms\Repositories\\'.ucfirst($this->module).'Repository');
+            $this->repo = app('SierraTecnologia\Cms\Repositories\\'.ucfirst($this->module).'Repository');
         }
     }
 

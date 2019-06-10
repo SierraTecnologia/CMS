@@ -28,6 +28,6 @@ if (!function_exists('sortable')) {
 if (!function_exists('cms')) {
     function cms()
     {
-        return app(Grafite\Cms\Services\CmsService::class);
+        return app(SierraTecnologia\Cms\Services\CmsService::class);
     }
 }

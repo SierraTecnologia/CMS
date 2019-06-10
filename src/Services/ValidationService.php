@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;

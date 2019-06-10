@@ -11,7 +11,7 @@ class PagesTest extends TestCase
         parent::setUp();
         $this->withoutMiddleware();
         $this->withoutEvents();
-        factory(\Grafite\Cms\Models\Page::class)->create();
+        factory(\SierraTecnologia\Cms\Models\Page::class)->create();
     }
 
     /*
@@ -48,7 +48,7 @@ class PagesTest extends TestCase
 
     public function testStore()
     {
-        $page = factory(\Grafite\Cms\Models\Page::class)->make(['id' => 2]);
+        $page = factory(\SierraTecnologia\Cms\Models\Page::class)->make(['id' => 2]);
         $page = $page->toArray();
         unset($page['translations']);
         $response = $this->call('POST', 'cms/pages', $page);
@@ -92,7 +92,7 @@ class PagesTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('translations', [
-            'entity_type' => 'Grafite\\Cms\\Models\\Page',
+            'entity_type' => 'SierraTecnologia\\Cms\\Models\\Page',
         ]);
         $this->assertEquals(302, $response->getStatusCode());
     }

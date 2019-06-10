@@ -1,11 +1,11 @@
 <?php
 
-namespace Grafite\Cms\Traits;
+namespace SierraTecnologia\Cms\Traits;
 
-use Grafite\Cms\Models\Translation;
-use Grafite\Cms\Services\CmsService;
+use SierraTecnologia\Cms\Models\Translation;
+use SierraTecnologia\Cms\Services\CmsService;
 use Stichoza\GoogleTranslate\TranslateClient;
-use Grafite\Cms\Repositories\TranslationRepository;
+use SierraTecnologia\Cms\Repositories\TranslationRepository;
 
 trait Translatable
 {

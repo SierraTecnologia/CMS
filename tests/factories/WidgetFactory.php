@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Grafite\Cms\Models\Widget::class, function (Faker\Generator $faker) {
+$factory->define(\SierraTecnologia\Cms\Models\Widget::class, function (Faker\Generator $faker) {
     return [
         'id' => 1,
         'name' => 'test',

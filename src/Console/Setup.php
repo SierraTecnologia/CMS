@@ -1,12 +1,12 @@
 <?php
 
-namespace Grafite\Cms\Console;
+namespace SierraTecnologia\Cms\Console;
 
 use App\Models\Role;
 use App\Models\User;
 use App\Services\UserService;
 use Artisan;
-use Grafite\Builder\Traits\FileMakerTrait;
+use SierraTecnologia\Builder\Traits\FileMakerTrait;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Config;
@@ -20,14 +20,14 @@ class Setup extends Command
      *
      * @var string
      */
-    protected $signature = 'grafite:cms-setup';
+    protected $signature = 'sierratecnologia:cms-setup';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Grafite CMS will setup your site with a CMS (Only for use on New Laravel Applications!)';
+    protected $description = 'SierraTecnologia CMS will setup your site with a CMS (Only for use on New Laravel Applications!)';
 
     /**
      * Execute the console command.
@@ -37,51 +37,51 @@ class Setup extends Command
     public function handle()
     {
         Artisan::call('vendor:publish', [
-            '--provider' => 'Grafite\Cms\GrafiteCmsProvider',
+            '--provider' => 'SierraTecnologia\Cms\SierraTecnologiaCmsProvider',
             '--force' => true,
         ]);
 
         Artisan::call('vendor:publish', [
-            '--provider' => 'Grafite\Builder\GrafiteBuilderProvider',
+            '--provider' => 'SierraTecnologia\Builder\SierraTecnologiaBuilderProvider',
             '--force' => true,
         ]);
 
         $fileSystem = new Filesystem();
 
-        $files = $fileSystem->allFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter');
+        $files = $fileSystem->allFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter');
 
         $this->line('Copying routes...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/routes', base_path('routes'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/routes', base_path('routes'));
 
         $this->line('Copying config...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/config', base_path('config'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/config', base_path('config'));
 
         $this->line('Copying app/Http...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/app/Http', app_path('Http'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/app/Http', app_path('Http'));
 
         $this->line('Copying app/Events...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/app/Events', app_path('Events'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/app/Events', app_path('Events'));
 
         $this->line('Copying app/Listeners...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/app/Listeners', app_path('Listeners'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/app/Listeners', app_path('Listeners'));
 
         $this->line('Copying app/Notifications...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/app/Notifications', app_path('Notifications'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/app/Notifications', app_path('Notifications'));
 
         $this->line('Copying app/Models...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/app/Models', app_path('Models'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/app/Models', app_path('Models'));
 
         $this->line('Copying app/Services...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/app/Services', app_path('Services'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/app/Services', app_path('Services'));
 
         $this->line('Copying database...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/database', base_path('database'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/database', base_path('database'));
 
         $this->line('Copying resources/views...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/resources/views', base_path('resources/views'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/resources/views', base_path('resources/views'));
 
         $this->line('Copying tests...');
-        $this->copyPreparedFiles(getcwd().'/vendor/grafite/builder/src/Packages/Starter/tests', base_path('tests'));
+        $this->copyPreparedFiles(getcwd().'/vendor/sierratecnologia/builder/src/Packages/Starter/tests', base_path('tests'));
 
         $this->fileManager();
 
@@ -123,7 +123,7 @@ class Setup extends Command
             }
             $service->create($user, 'admin', 'admin', false);
 
-            $this->info('Finished setting up your site with Grafite CMS!');
+            $this->info('Finished setting up your site with SierraTecnologia CMS!');
             $this->line('You can now login with the following username and password:');
             $this->comment('admin@example.com');
             $this->comment('admin');
@@ -164,7 +164,7 @@ class Setup extends Command
 
         // Kernel setup
         $routeContents = file_get_contents(app_path('Http/Kernel.php'));
-        $routeContents = str_replace("'auth' => \App\Http\Middleware\Authenticate::class,", "'auth' => \App\Http\Middleware\Authenticate::class,\n\t\t'cms' => \App\Http\Middleware\GrafiteCms::class,\n\t\t'cms-api' => \App\Http\Middleware\GrafiteCmsApi::class,\n\t\t'cms-analytics' => \Grafite\Cms\Middleware\GrafiteCmsAnalytics::class,\n\t\t'cms-language' => \App\Http\Middleware\GrafiteCmsLanguage::class,\n\t\t'admin' => \App\Http\Middleware\Admin::class,\n\t\t'active' => \App\Http\Middleware\Active::class,", $routeContents);
+        $routeContents = str_replace("'auth' => \App\Http\Middleware\Authenticate::class,", "'auth' => \App\Http\Middleware\Authenticate::class,\n\t\t'cms' => \App\Http\Middleware\SierraTecnologiaCms::class,\n\t\t'cms-api' => \App\Http\Middleware\SierraTecnologiaCmsApi::class,\n\t\t'cms-analytics' => \SierraTecnologia\Cms\Middleware\SierraTecnologiaCmsAnalytics::class,\n\t\t'cms-language' => \App\Http\Middleware\SierraTecnologiaCmsLanguage::class,\n\t\t'admin' => \App\Http\Middleware\Admin::class,\n\t\t'active' => \App\Http\Middleware\Active::class,", $routeContents);
         file_put_contents(app_path('Http/Kernel.php'), $routeContents);
 
         $fileSystem = new Filesystem();

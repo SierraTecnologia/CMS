@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Console;
+namespace SierraTecnologia\Cms\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;

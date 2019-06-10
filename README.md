@@ -1,16 +1,16 @@
-# Grafite CMS
+# SierraTecnologia CMS
 
 **CMS** - Add a CMS to any Laravel app to gain control of: pages, blogs, galleries, events, custom modules, images and more.
 
-[![Build Status](https://travis-ci.org/GrafiteInc/CMS.svg?branch=master)](https://travis-ci.org/GrafiteInc/CMS)
-[![Maintainability](https://api.codeclimate.com/v1/badges/f28b73ebf600f2db7f48/maintainability)](https://codeclimate.com/github/GrafiteInc/CMS/maintainability)
-[![Packagist](https://img.shields.io/packagist/dt/grafite/cms.svg?maxAge=2592000)](https://packagist.org/packages/grafite/cms)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://packagist.org/packages/grafite/cms)
-[![Join the chat at https://gitter.im/GrafiteInc/CMS](https://badges.gitter.im/GrafiteInc/CMS.svg)](https://gitter.im/GrafiteInc/CMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/SierraTecnologiaInc/CMS.svg?branch=master)](https://travis-ci.org/SierraTecnologiaInc/CMS)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f28b73ebf600f2db7f48/maintainability)](https://codeclimate.com/github/SierraTecnologiaInc/CMS/maintainability)
+[![Packagist](https://img.shields.io/packagist/dt/sierratecnologia/cms.svg?maxAge=2592000)](https://packagist.org/packages/sierratecnologia/cms)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://packagist.org/packages/sierratecnologia/cms)
+[![Join the chat at https://gitter.im/SierraTecnologiaInc/CMS](https://badges.gitter.im/SierraTecnologiaInc/CMS.svg)](https://gitter.im/SierraTecnologiaInc/CMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Grafite CMS is a full fledged CMS that can be added to any Laravel application. It provides you with full control of things like: pages, menus, links, widgets, blogs, events, faqs etc.
+SierraTecnologia CMS is a full fledged CMS that can be added to any Laravel application. It provides you with full control of things like: pages, menus, links, widgets, blogs, events, faqs etc.
 
-Grafite CMS comes with a module builder for all your custom CMS needs, as well as a module publishing tools. So if you decide to reuse some modules on future projects you can easily publish thier assets seamlessly. If you wish to make your Grafite CMS module into a PHP package, then you will need to have it publish its assets to the `cms/modules` directory.
+SierraTecnologia CMS comes with a module builder for all your custom CMS needs, as well as a module publishing tools. So if you decide to reuse some modules on future projects you can easily publish thier assets seamlessly. If you wish to make your SierraTecnologia CMS module into a PHP package, then you will need to have it publish its assets to the `cms/modules` directory.
 
 ### What is simple vs complex setup?
 Simple setup uses Grifite Builder as the backbone of an app for you using Laravel, once the setup command has been run you will have a full CMS as an app. Complex setup is specifically for developers who want to add a CMS to their existing app.
@@ -19,10 +19,10 @@ Simple setup uses Grifite Builder as the backbone of an app for you using Larave
 * [Matt Lantz](https://github.com/mlantz) ([@mattylantz](http://twitter.com/mattylantz), mattlantz at gmail dot com)
 
 ## Website
-[https://cms.grafite.ca](https://cms.grafite.ca)
+[https://cms.sierratecnologia.ca](https://cms.sierratecnologia.ca)
 
 ## Detailed Documentation
-Please consult the documentation here: [https://docs.grafite.ca/cms](https://docs.grafite.ca/cms)
+Please consult the documentation here: [https://docs.sierratecnologia.ca/cms](https://docs.sierratecnologia.ca/cms)
 
 ## General Requirements
 1. PHP 7.1.3+
@@ -38,11 +38,11 @@ Please consult the documentation here: [https://docs.grafite.ca/cms](https://doc
 | 5.4.x | 2.3.x | no |
 
 ## License
-Grafite CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+SierraTecnologia CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 ## Redactor License
-Grafite has an OEM licence for the use of Redactor in the Grafite CMS package.
-You are fully welcome to use Grafite CMS package and incorporate it into any apps you build, you are permitted to offer those apps as SaaS or other products.
+SierraTecnologia has an OEM licence for the use of Redactor in the SierraTecnologia CMS package.
+You are fully welcome to use SierraTecnologia CMS package and incorporate it into any apps you build, you are permitted to offer those apps as SaaS or other products.
 However, you are not entitle to strip out parts of Redactor and resell them, please see this [license](https://imperavi.com/redactor/license/) for more information
 
 ### Bug Reporting and Feature Requests

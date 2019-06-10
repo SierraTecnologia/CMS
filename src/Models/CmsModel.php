@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Models;
+namespace SierraTecnologia\Cms\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
-use Grafite\Cms\Models\Link;
+use SierraTecnologia\Cms\Models\Link;
 
 class CmsModel extends Model
 {
@@ -74,12 +74,12 @@ class CmsModel extends Model
         Translation::where('entity_id', $id)->where('entity_type', $type)->delete();
         Archive::where('entity_id', $id)->where('entity_type', $type)->delete();
 
-        Archive::where('entity_type', 'Grafite\Cms\Models\Translation')
+        Archive::where('entity_type', 'SierraTecnologia\Cms\Models\Translation')
             ->where('entity_data', 'LIKE', '%"entity_id":'.$id.'%')
             ->where('entity_data', 'LIKE', '%"entity_type":"'.$type.'"%')
             ->delete();
 
-        if ($type == 'Grafite\Cms\Models\Page') {
+        if ($type == 'SierraTecnologia\Cms\Models\Page') {
             Link::where('page_id', $id)->delete();
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
 use App;
 use Exception;
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Cms;
 use SplFileInfo;
-use Grafite\Cms\Facades\CryptoServiceFacade;
+use SierraTecnologia\Cms\Facades\CryptoServiceFacade;
 
 class AssetService
 {

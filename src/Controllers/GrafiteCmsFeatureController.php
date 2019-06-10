@@ -1,15 +1,15 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Cms;
-use Grafite\Cms\Models\Archive;
-use Grafite\Cms\Services\FileService;
+use SierraTecnologia\Cms\Models\Archive;
+use SierraTecnologia\Cms\Services\FileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 
-class GrafiteCmsFeatureController extends GrafiteCmsController
+class SierraTecnologiaCmsFeatureController extends SierraTecnologiaCmsController
 {
     public function sendHome()
     {
@@ -89,10 +89,10 @@ class GrafiteCmsFeatureController extends GrafiteCmsController
      */
     public function preview($entity, $id)
     {
-        $modelString = 'Grafite\Cms\Models\\'.ucfirst($entity);
+        $modelString = 'SierraTecnologia\Cms\Models\\'.ucfirst($entity);
 
         if (!class_exists($modelString)) {
-            $modelString = 'Grafite\Cms\Models\\'.ucfirst($entity).'s';
+            $modelString = 'SierraTecnologia\Cms\Models\\'.ucfirst($entity).'s';
         }
 
         $model = new $modelString();
@@ -148,7 +148,7 @@ class GrafiteCmsFeatureController extends GrafiteCmsController
      */
     public function deleteHero($entity, $id)
     {
-        $entity = app('Grafite\Cms\Models\\'.ucfirst($entity))->find($id);
+        $entity = app('SierraTecnologia\Cms\Models\\'.ucfirst($entity))->find($id);
 
         if (app(FileService::class)->delete($entity->hero_image)) {
             $entity->update([

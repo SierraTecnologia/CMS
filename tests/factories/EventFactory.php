@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Grafite\Cms\Models\Event::class, function (Faker\Generator $faker) {
+$factory->define(\SierraTecnologia\Cms\Models\Event::class, function (Faker\Generator $faker) {
     return [
         'id' => 1,
         'start_date' => '2016-10-31',

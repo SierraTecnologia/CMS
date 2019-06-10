@@ -1,15 +1,15 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Cms;
 use Illuminate\Http\Request;
-use Grafite\Cms\Models\Promotion;
-use Grafite\Cms\Requests\PromotionRequest;
-use Grafite\Cms\Services\ValidationService;
-use Grafite\Cms\Repositories\PromotionRepository;
+use SierraTecnologia\Cms\Models\Promotion;
+use SierraTecnologia\Cms\Requests\PromotionRequest;
+use SierraTecnologia\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Repositories\PromotionRepository;
 
-class PromotionsController extends GrafiteCmsController
+class PromotionsController extends SierraTecnologiaCmsController
 {
     public function __construct(PromotionRepository $repository)
     {

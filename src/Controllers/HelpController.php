@@ -1,8 +1,8 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
-class HelpController extends GrafiteCmsController
+class HelpController extends SierraTecnologiaCmsController
 {
     public function main()
     {

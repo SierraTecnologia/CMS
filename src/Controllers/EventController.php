@@ -1,16 +1,16 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use URL;
 use Cms;
-use Grafite\Cms\Models\Event;
+use SierraTecnologia\Cms\Models\Event;
 use Illuminate\Http\Request;
-use Grafite\Cms\Requests\EventRequest;
-use Grafite\Cms\Services\ValidationService;
-use Grafite\Cms\Repositories\EventRepository;
+use SierraTecnologia\Cms\Requests\EventRequest;
+use SierraTecnologia\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Repositories\EventRepository;
 
-class EventController extends GrafiteCmsController
+class EventController extends SierraTecnologiaCmsController
 {
     public function __construct(EventRepository $repository)
     {

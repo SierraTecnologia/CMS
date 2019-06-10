@@ -1,9 +1,9 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
-use Grafite\Cms\Repositories\PageRepository;
-use Grafite\Cms\Services\BaseService;
+use SierraTecnologia\Cms\Repositories\PageRepository;
+use SierraTecnologia\Cms\Services\BaseService;
 use Illuminate\Support\Facades\Config;
 
 class PageService extends BaseService

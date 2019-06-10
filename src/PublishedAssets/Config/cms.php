@@ -2,7 +2,7 @@
 
 /*
  * --------------------------------------------------------------------------
- * Grafite CMS Config
+ * SierraTecnologia CMS Config
  * --------------------------------------------------------------------------
 */
 
@@ -89,9 +89,9 @@ return [
     */
 
     'site-mapped-modules' => [
-        'blog' => 'Grafite\Cms\Repositories\BlogRepository',
-        'page' => 'Grafite\Cms\Repositories\PageRepository',
-        'events' => 'Grafite\Cms\Repositories\EventRepository',
+        'blog' => 'SierraTecnologia\Cms\Repositories\BlogRepository',
+        'page' => 'SierraTecnologia\Cms\Repositories\PageRepository',
+        'events' => 'SierraTecnologia\Cms\Repositories\EventRepository',
     ],
 
     /*
@@ -126,7 +126,7 @@ return [
      * --------------------------------------------------------------------------
     */
 
-    'backend-title' => 'Grafite CMS',
+    'backend-title' => 'SierraTecnologia CMS',
     'backend-route-prefix' => 'cms',
     'backend-theme' => 'standard', // dark, standard
     'registration-available' => false,

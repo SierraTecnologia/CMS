@@ -1,14 +1,14 @@
 <?php
 
-namespace Grafite\Cms\Services\Traits;
+namespace SierraTecnologia\Cms\Services\Traits;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
-use Grafite\Cms\Repositories\LinkRepository;
-use Grafite\Cms\Repositories\MenuRepository;
-use Grafite\Cms\Repositories\PageRepository;
+use SierraTecnologia\Cms\Repositories\LinkRepository;
+use SierraTecnologia\Cms\Repositories\MenuRepository;
+use SierraTecnologia\Cms\Repositories\PageRepository;
 
 trait MenuServiceTrait
 {

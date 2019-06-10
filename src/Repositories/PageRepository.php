@@ -1,13 +1,13 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
 use Carbon\Carbon;
 use Cms;
-use Grafite\Cms\Models\Page;
-use Grafite\Cms\Repositories\CmsRepository;
-use Grafite\Cms\Repositories\TranslationRepository;
-use Grafite\Cms\Services\FileService;
+use SierraTecnologia\Cms\Models\Page;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Repositories\TranslationRepository;
+use SierraTecnologia\Cms\Services\FileService;
 
 class PageRepository extends CmsRepository
 {
@@ -63,15 +63,15 @@ class PageRepository extends CmsRepository
         $page = $this->model->where('url', $url)->where('is_published', 1)->where('published_at', '<=', Carbon::now(config('app.timezone'))->format('Y-m-d H:i:s'))->first();
 
         if ($page && app()->getLocale() !== config('cms.default-language')) {
-            $page = $this->translationRepo->findByEntityId($page->id, 'Grafite\Cms\Models\Page');
+            $page = $this->translationRepo->findByEntityId($page->id, 'SierraTecnologia\Cms\Models\Page');
         }
 
         if (!$page) {
-            $page = $this->translationRepo->findByUrl($url, 'Grafite\Cms\Models\Page');
+            $page = $this->translationRepo->findByUrl($url, 'SierraTecnologia\Cms\Models\Page');
         }
 
         if ($url === 'home' && app()->getLocale() !== config('cms.default-language')) {
-            $page = $this->translationRepo->findByUrl($url, 'Grafite\Cms\Models\Page');
+            $page = $this->translationRepo->findByUrl($url, 'SierraTecnologia\Cms\Models\Page');
         }
 
         return $page;
@@ -99,7 +99,7 @@ class PageRepository extends CmsRepository
         $payload['title'] = htmlentities($payload['title']);
 
         if (!empty($payload['lang']) && $payload['lang'] !== config('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($page->id, 'Grafite\Cms\Models\Page', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($page->id, 'SierraTecnologia\Cms\Models\Page', $payload['lang'], $payload);
         } else {
             $payload['url'] = Cms::convertToURL($payload['url']);
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

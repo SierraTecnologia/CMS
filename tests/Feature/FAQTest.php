@@ -11,7 +11,7 @@ class FAQTest extends TestCase
         parent::setUp();
         $this->withoutMiddleware();
         $this->withoutEvents();
-        factory(\Grafite\Cms\Models\FAQ::class)->create();
+        factory(\SierraTecnologia\Cms\Models\FAQ::class)->create();
     }
 
     /*
@@ -88,7 +88,7 @@ class FAQTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('translations', [
-            'entity_type' => 'Grafite\\Cms\\Models\\FAQ',
+            'entity_type' => 'SierraTecnologia\\Cms\\Models\\FAQ',
         ]);
         $this->assertEquals(302, $response->getStatusCode());
     }

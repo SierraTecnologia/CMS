@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Models;
+namespace SierraTecnologia\Cms\Models;
 
-use Grafite\Cms\Models\CmsModel;
-use Grafite\Cms\Services\Normalizer;
-use Grafite\Cms\Traits\Translatable;
+use SierraTecnologia\Cms\Models\CmsModel;
+use SierraTecnologia\Cms\Services\Normalizer;
+use SierraTecnologia\Cms\Traits\Translatable;
 
 class Event extends CmsModel
 {

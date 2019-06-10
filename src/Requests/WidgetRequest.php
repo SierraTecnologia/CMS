@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
-use Grafite\Cms\Models\Widget;
+use SierraTecnologia\Cms\Models\Widget;
 use Illuminate\Foundation\Http\FormRequest;
 
 class WidgetRequest extends FormRequest

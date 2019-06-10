@@ -11,7 +11,7 @@ class PromotionsTest extends TestCase
         parent::setUp();
         $this->withoutMiddleware();
         $this->withoutEvents();
-        factory(\Grafite\Cms\Models\Promotion::class)->create();
+        factory(\SierraTecnologia\Cms\Models\Promotion::class)->create();
     }
 
     /*
@@ -48,7 +48,7 @@ class PromotionsTest extends TestCase
 
     public function testStore()
     {
-        $promotion = factory(\Grafite\Cms\Models\Promotion::class)->make(['id' => 2]);
+        $promotion = factory(\SierraTecnologia\Cms\Models\Promotion::class)->make(['id' => 2]);
         $promotion = $promotion->toArray();
         unset($promotion['is_published']);
         unset($promotion['translations']);
@@ -89,7 +89,7 @@ class PromotionsTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('translations', [
-            'entity_type' => 'Grafite\\Cms\\Models\\Promotion',
+            'entity_type' => 'SierraTecnologia\\Cms\\Models\\Promotion',
         ]);
         $this->assertEquals(302, $response->getStatusCode());
     }

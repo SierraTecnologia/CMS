@@ -2,8 +2,8 @@
 
 namespace Tests\Services;
 
-use Grafite\Cms\Services\EventService;
-use Grafite\Cms\Services\Normalizer;
+use SierraTecnologia\Cms\Services\EventService;
+use SierraTecnologia\Cms\Services\Normalizer;
 use Tests\TestCase;
 
 class EventServiceTest extends TestCase
@@ -20,7 +20,7 @@ class EventServiceTest extends TestCase
         $result = $this->service->generate('2018-03-22');
 
         $this->assertTrue(is_object($result));
-        $this->assertEquals('Grafite\Cms\Services\EventService', get_class($result));
+        $this->assertEquals('SierraTecnologia\Cms\Services\EventService', get_class($result));
     }
 
     public function testCalendar()

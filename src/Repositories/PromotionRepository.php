@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
-use Grafite\Cms\Models\Promotion;
-use Grafite\Cms\Repositories\CmsRepository;
-use Grafite\Cms\Repositories\TranslationRepository;
+use SierraTecnologia\Cms\Models\Promotion;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Repositories\TranslationRepository;
 
 class PromotionRepository extends CmsRepository
 {
@@ -48,7 +48,7 @@ class PromotionRepository extends CmsRepository
         $payload['slug'] = str_slug($payload['slug']);
 
         if (!empty($payload['lang']) && $payload['lang'] !== config('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($widget->id, 'Grafite\Cms\Models\Promotion', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($widget->id, 'SierraTecnologia\Cms\Models\Promotion', $payload['lang'], $payload);
         } else {
             unset($payload['lang']);
 

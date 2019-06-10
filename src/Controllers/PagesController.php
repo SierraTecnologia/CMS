@@ -1,15 +1,15 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Cms;
-use Grafite\Cms\Models\Page;
+use SierraTecnologia\Cms\Models\Page;
 use Illuminate\Http\Request;
-use Grafite\Cms\Requests\PagesRequest;
-use Grafite\Cms\Services\ValidationService;
-use Grafite\Cms\Repositories\PageRepository;
+use SierraTecnologia\Cms\Requests\PagesRequest;
+use SierraTecnologia\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Repositories\PageRepository;
 
-class PagesController extends GrafiteCmsController
+class PagesController extends SierraTecnologiaCmsController
 {
     public function __construct(PageRepository $repository)
     {

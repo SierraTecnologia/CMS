@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Config;
 
-class GrafiteCmsApi
+class SierraTecnologiaCmsApi
 {
     /**
      * Handle an incoming request.

@@ -1,17 +1,17 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Cms;
 use Exception;
-use Grafite\Cms\Models\Link;
+use SierraTecnologia\Cms\Models\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
-use Grafite\Cms\Requests\LinksRequest;
-use Grafite\Cms\Services\ValidationService;
-use Grafite\Cms\Repositories\LinkRepository;
+use SierraTecnologia\Cms\Requests\LinksRequest;
+use SierraTecnologia\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Repositories\LinkRepository;
 
-class LinksController extends GrafiteCmsController
+class LinksController extends SierraTecnologiaCmsController
 {
     public function __construct(LinkRepository $repository)
     {

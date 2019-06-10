@@ -11,7 +11,7 @@ class EventsTest extends TestCase
         parent::setUp();
         $this->withoutMiddleware();
         $this->withoutEvents();
-        factory(\Grafite\Cms\Models\Event::class)->create();
+        factory(\SierraTecnologia\Cms\Models\Event::class)->create();
     }
 
     /*
@@ -48,7 +48,7 @@ class EventsTest extends TestCase
 
     public function testStore()
     {
-        $event = factory(\Grafite\Cms\Models\Event::class)->make(['id' => 2]);
+        $event = factory(\SierraTecnologia\Cms\Models\Event::class)->make(['id' => 2]);
         $event = $event->toArray();
         unset($event['translations']);
         $response = $this->call('POST', 'cms/events', $event);
@@ -88,7 +88,7 @@ class EventsTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('translations', [
-            'entity_type' => 'Grafite\\Cms\\Models\\Event',
+            'entity_type' => 'SierraTecnologia\\Cms\\Models\\Event',
         ]);
         $this->assertEquals(302, $response->getStatusCode());
     }

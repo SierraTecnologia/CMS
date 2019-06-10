@@ -1,11 +1,11 @@
 <?php
 
-namespace Grafite\Cms\Models;
+namespace SierraTecnologia\Cms\Models;
 
-use Grafite\Cms\Models\CmsModel;
-use Grafite\Cms\Models\Menu;
-use Grafite\Cms\Models\Page;
-use Grafite\Cms\Traits\Translatable;
+use SierraTecnologia\Cms\Models\CmsModel;
+use SierraTecnologia\Cms\Models\Menu;
+use SierraTecnologia\Cms\Models\Page;
+use SierraTecnologia\Cms\Traits\Translatable;
 
 class Link extends CmsModel
 {

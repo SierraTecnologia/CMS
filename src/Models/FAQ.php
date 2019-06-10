@@ -1,9 +1,9 @@
 <?php
 
-namespace Grafite\Cms\Models;
+namespace SierraTecnologia\Cms\Models;
 
-use Grafite\Cms\Models\CmsModel;
-use Grafite\Cms\Traits\Translatable;
+use SierraTecnologia\Cms\Models\CmsModel;
+use SierraTecnologia\Cms\Traits\Translatable;
 
 class FAQ extends CmsModel
 {

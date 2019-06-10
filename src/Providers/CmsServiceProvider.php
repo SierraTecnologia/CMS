@@ -1,16 +1,16 @@
 <?php
 
-namespace Grafite\Cms\Providers;
+namespace SierraTecnologia\Cms\Providers;
 
 use App;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Grafite\Cms\Services\BlogService;
-use Grafite\Cms\Services\CryptoService;
-use Grafite\Cms\Services\EventService;
-use Grafite\Cms\Services\ModuleService;
-use Grafite\Cms\Services\PageService;
-use Grafite\Cms\Services\CmsService;
+use SierraTecnologia\Cms\Services\BlogService;
+use SierraTecnologia\Cms\Services\CryptoService;
+use SierraTecnologia\Cms\Services\EventService;
+use SierraTecnologia\Cms\Services\ModuleService;
+use SierraTecnologia\Cms\Services\PageService;
+use SierraTecnologia\Cms\Services\CmsService;
 
 class CmsServiceProvider extends ServiceProvider
 {
@@ -21,13 +21,13 @@ class CmsServiceProvider extends ServiceProvider
     {
         $loader = AliasLoader::getInstance();
 
-        $loader->alias('Cms', \Grafite\Cms\Facades\CmsServiceFacade::class);
-        $loader->alias('PageService', \Grafite\Cms\Facades\PageServiceFacade::class);
-        $loader->alias('EventService', \Grafite\Cms\Facades\EventServiceFacade::class);
-        $loader->alias('CryptoService', \Grafite\Cms\Facades\CryptoServiceFacade::class);
-        $loader->alias('ModuleService', \Grafite\Cms\Facades\ModuleServiceFacade::class);
-        $loader->alias('BlogService', \Grafite\Cms\Facades\BlogServiceFacade::class);
-        $loader->alias('FileService', \Grafite\Cms\Services\FileService::class);
+        $loader->alias('Cms', \SierraTecnologia\Cms\Facades\CmsServiceFacade::class);
+        $loader->alias('PageService', \SierraTecnologia\Cms\Facades\PageServiceFacade::class);
+        $loader->alias('EventService', \SierraTecnologia\Cms\Facades\EventServiceFacade::class);
+        $loader->alias('CryptoService', \SierraTecnologia\Cms\Facades\CryptoServiceFacade::class);
+        $loader->alias('ModuleService', \SierraTecnologia\Cms\Facades\ModuleServiceFacade::class);
+        $loader->alias('BlogService', \SierraTecnologia\Cms\Facades\BlogServiceFacade::class);
+        $loader->alias('FileService', \SierraTecnologia\Cms\Services\FileService::class);
 
         $this->app->bind('CmsService', function ($app) {
             return new CmsService();

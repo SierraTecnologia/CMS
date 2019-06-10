@@ -1,11 +1,11 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
-use Grafite\Cms\Services\CmsService;
+use SierraTecnologia\Cms\Services\CmsService;
 use Illuminate\Http\Response;
 
-class SiteMapController extends GrafiteCmsController
+class SiteMapController extends SierraTecnologiaCmsController
 {
     protected $service;
 

@@ -1,18 +1,18 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
 use Cms;
-use Grafite\Cms\Models\Menu;
-use Grafite\Cms\Repositories\LinkRepository;
-use Grafite\Cms\Repositories\MenuRepository;
-use Grafite\Cms\Requests\MenuRequest;
-use Grafite\Cms\Services\CmsResponseService;
-use Grafite\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Models\Menu;
+use SierraTecnologia\Cms\Repositories\LinkRepository;
+use SierraTecnologia\Cms\Repositories\MenuRepository;
+use SierraTecnologia\Cms\Requests\MenuRequest;
+use SierraTecnologia\Cms\Services\CmsResponseService;
+use SierraTecnologia\Cms\Services\ValidationService;
 
-class MenuController extends GrafiteCmsController
+class MenuController extends SierraTecnologiaCmsController
 {
     protected $linkRepository;
 

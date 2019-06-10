@@ -1,13 +1,13 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
 use Carbon\Carbon;
 use Cms;
-use Grafite\Cms\Models\Blog;
-use Grafite\Cms\Repositories\CmsRepository;
-use Grafite\Cms\Repositories\TranslationRepository;
-use Grafite\Cms\Services\FileService;
+use SierraTecnologia\Cms\Models\Blog;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Repositories\TranslationRepository;
+use SierraTecnologia\Cms\Services\FileService;
 
 class BlogRepository extends CmsRepository
 {
@@ -61,7 +61,7 @@ class BlogRepository extends CmsRepository
         $tags = [];
 
         if (app()->getLocale() !== config('cms.default-language', 'en')) {
-            $blogs = $this->translationRepo->getEntitiesByTypeAndLang(app()->getLocale(), 'Grafite\Cms\Models\Blog');
+            $blogs = $this->translationRepo->getEntitiesByTypeAndLang(app()->getLocale(), 'SierraTecnologia\Cms\Models\Blog');
         } else {
             $blogs = $this->model->orderBy('published_at', 'desc')->get();
         }
@@ -116,7 +116,7 @@ class BlogRepository extends CmsRepository
         $blog = $this->model->where('url', $url)->where('is_published', 1)->where('published_at', '<=', Carbon::now(config('app.timezone'))->format('Y-m-d H:i:s'))->first();
 
         if (!$blog) {
-            $blog = $this->translationRepo->findByUrl($url, 'Grafite\Cms\Models\Blog');
+            $blog = $this->translationRepo->findByUrl($url, 'SierraTecnologia\Cms\Models\Blog');
         }
 
         return $blog;
@@ -156,7 +156,7 @@ class BlogRepository extends CmsRepository
         }
 
         if (!empty($payload['lang']) && $payload['lang'] !== config('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($blog->id, 'Grafite\Cms\Models\Blog', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($blog->id, 'SierraTecnologia\Cms\Models\Blog', $payload['lang'], $payload);
         } else {
             $payload['url'] = Cms::convertToURL($payload['url']);
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

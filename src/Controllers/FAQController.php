@@ -1,16 +1,16 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use URL;
 use Cms;
-use Grafite\Cms\Models\FAQ;
+use SierraTecnologia\Cms\Models\FAQ;
 use Illuminate\Http\Request;
-use Grafite\Cms\Requests\FAQRequest;
-use Grafite\Cms\Repositories\FAQRepository;
-use Grafite\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Requests\FAQRequest;
+use SierraTecnologia\Cms\Repositories\FAQRepository;
+use SierraTecnologia\Cms\Services\ValidationService;
 
-class FAQController extends GrafiteCmsController
+class FAQController extends SierraTecnologiaCmsController
 {
     public function __construct(FAQRepository $repository)
     {

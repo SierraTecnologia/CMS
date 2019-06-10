@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
-use Grafite\Cms\Repositories\PageRepository;
+use SierraTecnologia\Cms\Repositories\PageRepository;
 
 class PagesController extends Controller
 {

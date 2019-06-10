@@ -1,11 +1,11 @@
 <?php
 
-namespace Grafite\Cms\Middleware;
+namespace SierraTecnologia\Cms\Middleware;
 
 use Closure;
-use Grafite\Cms\Services\AnalyticsService;
+use SierraTecnologia\Cms\Services\AnalyticsService;
 
-class GrafiteCmsAnalytics
+class SierraTecnologiaCmsAnalytics
 {
     /**
      * Handle an incoming request.

@@ -2,7 +2,7 @@
 
 namespace Tests\Services;
 
-use Grafite\Cms\Services\CmsService;
+use SierraTecnologia\Cms\Services\CmsService;
 use Tests\TestCase;
 
 class CmsServiceTest extends TestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
-use Grafite\Cms\Services\BaseService;
+use SierraTecnologia\Cms\Services\BaseService;
 use Illuminate\Support\Facades\Config;
 
 class BlogService extends BaseService

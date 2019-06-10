@@ -1,24 +1,24 @@
 <?php
 
-namespace Grafite\Cms;
+namespace SierraTecnologia\Cms;
 
 use Cms;
 use Devfactory\Minify\Facades\MinifyFacade;
 use Devfactory\Minify\MinifyServiceProvider;
-use Grafite\Builder\GrafiteBuilderProvider;
-use Grafite\Cms\Console\Keys;
-use Grafite\Cms\Console\ModuleComposer;
-use Grafite\Cms\Console\ModuleCrud;
-use Grafite\Cms\Console\ModuleMake;
-use Grafite\Cms\Console\ModulePublish;
-use Grafite\Cms\Console\Setup;
-use Grafite\Cms\Console\ThemeGenerate;
-use Grafite\Cms\Console\ThemeLink;
-use Grafite\Cms\Console\ThemePublish;
-use Grafite\Cms\Providers\CmsEventServiceProvider;
-use Grafite\Cms\Providers\CmsModuleProvider;
-use Grafite\Cms\Providers\CmsRouteProvider;
-use Grafite\Cms\Providers\CmsServiceProvider;
+use SierraTecnologia\Builder\SierraTecnologiaBuilderProvider;
+use SierraTecnologia\Cms\Console\Keys;
+use SierraTecnologia\Cms\Console\ModuleComposer;
+use SierraTecnologia\Cms\Console\ModuleCrud;
+use SierraTecnologia\Cms\Console\ModuleMake;
+use SierraTecnologia\Cms\Console\ModulePublish;
+use SierraTecnologia\Cms\Console\Setup;
+use SierraTecnologia\Cms\Console\ThemeGenerate;
+use SierraTecnologia\Cms\Console\ThemeLink;
+use SierraTecnologia\Cms\Console\ThemePublish;
+use SierraTecnologia\Cms\Providers\CmsEventServiceProvider;
+use SierraTecnologia\Cms\Providers\CmsModuleProvider;
+use SierraTecnologia\Cms\Providers\CmsRouteProvider;
+use SierraTecnologia\Cms\Providers\CmsServiceProvider;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use GrahamCampbell\Markdown\MarkdownServiceProvider;
 use Illuminate\Foundation\AliasLoader;
@@ -30,7 +30,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Intervention\Image\ImageServiceProvider;
 
-class GrafiteCmsProvider extends ServiceProvider
+class SierraTecnologiaCmsProvider extends ServiceProvider
 {
     /**
      * Alias the services in the boot.
@@ -135,7 +135,7 @@ class GrafiteCmsProvider extends ServiceProvider
         $this->app->register(CmsRouteProvider::class);
         $this->app->register(CmsModuleProvider::class);
 
-        $this->app->register(GrafiteBuilderProvider::class);
+        $this->app->register(SierraTecnologiaBuilderProvider::class);
         $this->app->register(MinifyServiceProvider::class);
         $this->app->register(MarkdownServiceProvider::class);
         $this->app->register(ImageServiceProvider::class);

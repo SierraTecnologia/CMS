@@ -27,7 +27,7 @@
                         Blogs
                     </div>
                     <div class="card-body">
-                        <span class="lead">{{ app(Grafite\Cms\Models\Blog::class)->count() }}</span>
+                        <span class="lead">{{ app(SierraTecnologia\Cms\Models\Blog::class)->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                         Pages
                     </div>
                     <div class="card-body">
-                        <span class="lead">{{ app(Grafite\Cms\Models\Page::class)->count() }}</span>
+                        <span class="lead">{{ app(SierraTecnologia\Cms\Models\Page::class)->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         Widgets
                     </div>
                     <div class="card-body">
-                        <span class="lead">{{ app(Grafite\Cms\Models\Widget::class)->count() }}</span>
+                        <span class="lead">{{ app(SierraTecnologia\Cms\Models\Widget::class)->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                         Events
                     </div>
                     <div class="card-body">
-                        <span class="lead">{{ app(Grafite\Cms\Models\Event::class)->count() }}</span>
+                        <span class="lead">{{ app(SierraTecnologia\Cms\Models\Event::class)->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                         FAQs
                     </div>
                     <div class="card-body">
-                        <span class="lead">{{ app(Grafite\Cms\Models\FAQ::class)->count() }}</span>
+                        <span class="lead">{{ app(SierraTecnologia\Cms\Models\FAQ::class)->count() }}</span>
                     </div>
                 </div>
             </div>

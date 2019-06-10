@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
-use Grafite\Cms\Models\Menu;
+use SierraTecnologia\Cms\Models\Menu;
 use Illuminate\Foundation\Http\FormRequest;
 
 class MenuRequest extends FormRequest

@@ -11,7 +11,7 @@ class WidgetsTest extends TestCase
         parent::setUp();
         $this->withoutMiddleware();
         $this->withoutEvents();
-        factory(\Grafite\Cms\Models\Widget::class)->create();
+        factory(\SierraTecnologia\Cms\Models\Widget::class)->create();
     }
 
     /*
@@ -48,7 +48,7 @@ class WidgetsTest extends TestCase
 
     public function testStore()
     {
-        $widget = factory(\Grafite\Cms\Models\Widget::class)->make(['id' => 2]);
+        $widget = factory(\SierraTecnologia\Cms\Models\Widget::class)->make(['id' => 2]);
         $widget = $widget->toArray();
         unset($widget['translations']);
         $response = $this->call('POST', 'cms/widgets', $widget);
@@ -82,7 +82,7 @@ class WidgetsTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('translations', [
-            'entity_type' => 'Grafite\\Cms\\Models\\Widget',
+            'entity_type' => 'SierraTecnologia\\Cms\\Models\\Widget',
         ]);
         $this->assertEquals(302, $response->getStatusCode());
     }

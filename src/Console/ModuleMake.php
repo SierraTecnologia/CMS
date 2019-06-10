@@ -1,12 +1,12 @@
 <?php
 
-namespace Grafite\Cms\Console;
+namespace SierraTecnologia\Cms\Console;
 
 use Artisan;
 use Config;
 use Exception;
 use Illuminate\Console\Command;
-use Grafite\CrudMaker\Generators\CrudGenerator;
+use SierraTecnologia\CrudMaker\Generators\CrudGenerator;
 
 class ModuleMake extends Command
 {

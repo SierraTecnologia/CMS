@@ -16,7 +16,7 @@ php artisan migrate
 </pre>
 
                 <h3>Google Analytics</h3>
-                <p>Grafite CMS uses the Spatie package for Google Analytics integration. <br><br>Please follow its installation instructions: <a target="_blank" href="https://github.com/spatie/laravel-analytics#installation">https://github.com/spatie/laravel-analytics#installation</a></p>
+                <p>SierraTecnologia CMS uses the Spatie package for Google Analytics integration. <br><br>Please follow its installation instructions: <a target="_blank" href="https://github.com/spatie/laravel-analytics#installation">https://github.com/spatie/laravel-analytics#installation</a></p>
         </div>
     </div>
 

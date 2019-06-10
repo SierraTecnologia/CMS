@@ -1,5 +1,5 @@
 {
-    "name": "grafite/cms",
+    "name": "sierratecnologia/cms",
     "description": "Add a CMS to any Laravel app/website to gain control of: pages, blogs, galleries, events, custom modules, images and more.",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,7 @@
     "require": {
         "php": ">=7.1.3",
         "illuminate/support": "5.7.*",
-        "grafite/builder": "^2.5",
+        "sierratecnologia/builder": "^2.5",
         "devfactory/minify": "1.0.*",
         "aws/aws-sdk-php": "^3.18",
         "league/flysystem-aws-s3-v3": "^1.0",
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Grafite\\Cms\\": "src/"
+            "SierraTecnologia\\Cms\\": "src/"
         },
         "files": [
           "src/Helpers/blade.php",
@@ -48,7 +48,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Grafite\\Cms\\GrafiteCmsProvider"
+                "SierraTecnologia\\Cms\\SierraTecnologiaCmsProvider"
             ]
         }
     }

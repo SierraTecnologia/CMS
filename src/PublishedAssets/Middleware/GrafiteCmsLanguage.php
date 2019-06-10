@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cookie;
 
-class GrafiteCmsLanguage
+class SierraTecnologiaCmsLanguage
 {
     /**
      * Handle an incoming request.

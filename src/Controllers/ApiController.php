@@ -1,13 +1,13 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Config;
 
-class ApiController extends GrafiteCmsController
+class ApiController extends SierraTecnologiaCmsController
 {
     protected $model;
 
@@ -20,7 +20,7 @@ class ApiController extends GrafiteCmsController
         $this->modelName = str_singular($url);
 
         if (! empty($this->modelName)) {
-            $this->model = app('Grafite\Cms\Models\\'.ucfirst($this->modelName));
+            $this->model = app('SierraTecnologia\Cms\Models\\'.ucfirst($this->modelName));
         }
     }
 

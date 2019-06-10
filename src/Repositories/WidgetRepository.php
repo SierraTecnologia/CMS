@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
-use Grafite\Cms\Models\Widget;
-use Grafite\Cms\Repositories\CmsRepository;
-use Grafite\Cms\Repositories\TranslationRepository;
+use SierraTecnologia\Cms\Models\Widget;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Repositories\TranslationRepository;
 
 class WidgetRepository extends CmsRepository
 {
@@ -48,7 +48,7 @@ class WidgetRepository extends CmsRepository
         $payload['name'] = htmlentities($payload['name']);
 
         if (!empty($payload['lang']) && $payload['lang'] !== config('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($widget->id, 'Grafite\Cms\Models\Widget', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($widget->id, 'SierraTecnologia\Cms\Models\Widget', $payload['lang'], $payload);
         } else {
             unset($payload['lang']);
 

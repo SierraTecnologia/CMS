@@ -1,11 +1,11 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
-use Grafite\Cms\Models\Blog;
+use SierraTecnologia\Cms\Models\Blog;
 
 class BlogRequest extends FormRequest
 {

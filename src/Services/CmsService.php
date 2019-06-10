@@ -1,12 +1,12 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
-use Grafite\Cms\Facades\CryptoServiceFacade;
-use Grafite\Cms\Repositories\ImageRepository;
-use Grafite\Cms\Services\Traits\DefaultModuleServiceTrait;
-use Grafite\Cms\Services\Traits\MenuServiceTrait;
-use Grafite\Cms\Services\Traits\ModuleServiceTrait;
+use SierraTecnologia\Cms\Facades\CryptoServiceFacade;
+use SierraTecnologia\Cms\Repositories\ImageRepository;
+use SierraTecnologia\Cms\Services\Traits\DefaultModuleServiceTrait;
+use SierraTecnologia\Cms\Services\Traits\MenuServiceTrait;
+use SierraTecnologia\Cms\Services\Traits\ModuleServiceTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
@@ -232,7 +232,7 @@ class CmsService
     }
 
     /**
-     * Grafite CMS url generator - handles custom cms url
+     * SierraTecnologia CMS url generator - handles custom cms url
      *
      * @param  string $string
      *
@@ -246,7 +246,7 @@ class CmsService
     }
 
     /**
-     * Grafite CMS route generator
+     * SierraTecnologia CMS route generator
      *
      * @param  string $string
      *
@@ -313,9 +313,9 @@ class CmsService
     {
         $itemCollection = [];
         $modules = config('site-mapped-modules', [
-            'blog' => 'Grafite\Cms\Repositories\BlogRepository',
-            'page' => 'Grafite\Cms\Repositories\PageRepository',
-            'events' => 'Grafite\Cms\Repositories\EventRepository',
+            'blog' => 'SierraTecnologia\Cms\Repositories\BlogRepository',
+            'page' => 'SierraTecnologia\Cms\Repositories\PageRepository',
+            'events' => 'SierraTecnologia\Cms\Repositories\EventRepository',
         ]);
 
         foreach ($modules as $module => $repository) {

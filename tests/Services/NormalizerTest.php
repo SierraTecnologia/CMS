@@ -3,7 +3,7 @@
 namespace Tests\Services;
 
 use Tests\TestCase;
-use Grafite\Cms\Services\Normalizer;
+use SierraTecnologia\Cms\Services\Normalizer;
 
 class NormalizerTest extends TestCase
 {

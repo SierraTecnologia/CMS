@@ -1,9 +1,9 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
 use Carbon\Carbon;
-use Grafite\Cms\Models\Translation;
+use SierraTecnologia\Cms\Models\Translation;
 
 class TranslationRepository
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
-use Grafite\Cms\Models\Page;
+use SierraTecnologia\Cms\Models\Page;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PagesRequest extends FormRequest

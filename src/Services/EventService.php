@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
 use Carbon\Carbon;
-use Grafite\Cms\Repositories\EventRepository;
-use Grafite\Cms\Services\BaseService;
+use SierraTecnologia\Cms\Repositories\EventRepository;
+use SierraTecnologia\Cms\Services\BaseService;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 
@@ -22,7 +22,7 @@ class EventService extends BaseService
      *
      * @param  string $date
      *
-     * @return Grafite\Cms\Services\EventService
+     * @return SierraTecnologia\Cms\Services\EventService
      */
     public function generate($date = null)
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Requests;
+namespace SierraTecnologia\Cms\Requests;
 
 use Auth;
 use Gate;
-use Grafite\Cms\Models\Event;
+use SierraTecnologia\Cms\Models\Event;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EventRequest extends FormRequest

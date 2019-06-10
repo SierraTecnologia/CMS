@@ -3,7 +3,7 @@
 namespace Tests\Services;
 
 use Tests\TestCase;
-use Grafite\Cms\Services\CryptoService;
+use SierraTecnologia\Cms\Services\CryptoService;
 
 class CryptoServiceTest extends TestCase
 {

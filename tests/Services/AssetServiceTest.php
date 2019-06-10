@@ -2,8 +2,8 @@
 
 namespace Tests\Services;
 
-use Grafite\Cms\Services\AssetService;
-use Grafite\Cms\Services\CryptoService;
+use SierraTecnologia\Cms\Services\AssetService;
+use SierraTecnologia\Cms\Services\CryptoService;
 use Illuminate\Filesystem\Filesystem;
 use Tests\TestCase;
 

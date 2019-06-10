@@ -1,9 +1,9 @@
 <?php
 
-namespace Grafite\Cms\Services\Traits;
+namespace SierraTecnologia\Cms\Services\Traits;
 
 use Illuminate\Support\Facades\Config;
-use Grafite\Cms\Facades\CryptoServiceFacade;
+use SierraTecnologia\Cms\Facades\CryptoServiceFacade;
 
 trait ModuleServiceTrait
 {

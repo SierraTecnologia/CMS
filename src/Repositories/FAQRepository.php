@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
 use Carbon\Carbon;
-use Grafite\Cms\Models\FAQ;
-use Grafite\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Models\FAQ;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
 
 class FAQRepository extends CmsRepository
 {
@@ -50,7 +50,7 @@ class FAQRepository extends CmsRepository
         $payload['question'] = htmlentities($payload['question']);
 
         if (!empty($payload['lang']) && $payload['lang'] !== config('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($item->id, 'Grafite\Cms\Models\FAQ', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($item->id, 'SierraTecnologia\Cms\Models\FAQ', $payload['lang'], $payload);
         } else {
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;
             $payload['published_at'] = (isset($payload['published_at']) && !empty($payload['published_at'])) ? Carbon::parse($payload['published_at'])->format('Y-m-d H:i:s') : Carbon::now(config('app.timezone'))->format('Y-m-d H:i:s');

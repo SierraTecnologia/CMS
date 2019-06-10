@@ -1,15 +1,15 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Cms;
 use Illuminate\Http\Request;
-use Grafite\Cms\Models\Widget;
-use Grafite\Cms\Requests\WidgetRequest;
-use Grafite\Cms\Services\ValidationService;
-use Grafite\Cms\Repositories\WidgetRepository;
+use SierraTecnologia\Cms\Models\Widget;
+use SierraTecnologia\Cms\Requests\WidgetRequest;
+use SierraTecnologia\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Repositories\WidgetRepository;
 
-class WidgetsController extends GrafiteCmsController
+class WidgetsController extends SierraTecnologiaCmsController
 {
     public function __construct(WidgetRepository $repository)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Cms;
 use Config;
@@ -9,15 +9,15 @@ use Redirect;
 use Response;
 use Exception;
 use CryptoService;
-use Grafite\Cms\Models\File;
+use SierraTecnologia\Cms\Models\File;
 use Illuminate\Http\Request;
-use Grafite\Cms\Requests\FileRequest;
-use Grafite\Cms\Services\FileService;
-use Grafite\Cms\Services\ValidationService;
-use Grafite\Cms\Repositories\FileRepository;
-use Grafite\Cms\Services\CmsResponseService;
+use SierraTecnologia\Cms\Requests\FileRequest;
+use SierraTecnologia\Cms\Services\FileService;
+use SierraTecnologia\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Repositories\FileRepository;
+use SierraTecnologia\Cms\Services\CmsResponseService;
 
-class FilesController extends GrafiteCmsController
+class FilesController extends SierraTecnologiaCmsController
 {
     public function __construct(
         FileRepository $repository,

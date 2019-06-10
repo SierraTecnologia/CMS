@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Grafite\Cms\Models\Link::class, function (Faker\Generator $faker) {
+$factory->define(\SierraTecnologia\Cms\Models\Link::class, function (Faker\Generator $faker) {
     return [
 
         'id' => 1,

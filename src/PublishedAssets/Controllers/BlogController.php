@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
-use Grafite\Cms\Repositories\BlogRepository;
+use SierraTecnologia\Cms\Repositories\BlogRepository;
 
 class BlogController extends Controller
 {

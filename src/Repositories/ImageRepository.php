@@ -1,12 +1,12 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
 use Cms;
 use Config;
 use CryptoService;
-use Grafite\Cms\Models\Image;
-use Grafite\Cms\Services\FileService;
+use SierraTecnologia\Cms\Models\Image;
+use SierraTecnologia\Cms\Services\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class ImageRepository extends CmsRepository

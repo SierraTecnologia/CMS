@@ -1,11 +1,11 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
 use Exception;
-use Grafite\Cms\Models\Link;
-use Grafite\Cms\Repositories\CmsRepository;
-use Grafite\Cms\Repositories\TranslationRepository;
+use SierraTecnologia\Cms\Models\Link;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Repositories\TranslationRepository;
 
 class LinkRepository extends CmsRepository
 {
@@ -81,7 +81,7 @@ class LinkRepository extends CmsRepository
         $payload['external'] = isset($payload['external']) ? $payload['external'] : 0;
 
         if (!empty($payload['lang']) && $payload['lang'] !== config('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($link->id, 'Grafite\Cms\Models\Link', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($link->id, 'SierraTecnologia\Cms\Models\Link', $payload['lang'], $payload);
         }
 
         unset($payload['lang']);

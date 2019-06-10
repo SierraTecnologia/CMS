@@ -37,10 +37,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Grafite\Cms\GrafiteCmsProvider::class,
+            \SierraTecnologia\Cms\SierraTecnologiaCmsProvider::class,
             \Collective\Html\HtmlServiceProvider::class,
             \Collective\Html\HtmlServiceProvider::class,
-            \Grafite\Builder\GrafiteBuilderProvider::class,
+            \SierraTecnologia\Builder\SierraTecnologiaBuilderProvider::class,
         ];
     }
 
@@ -49,8 +49,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
         return [
             'Form' => \Collective\Html\FormFacade::class,
             'HTML' => \Collective\Html\HtmlFacade::class,
-            'FormMaker' => \Grafite\Builder\Facades\FormMaker::class,
-            'InputMaker' => \Grafite\Builder\Facades\InputMaker::class
+            'FormMaker' => \SierraTecnologia\Builder\Facades\FormMaker::class,
+            'InputMaker' => \SierraTecnologia\Builder\Facades\InputMaker::class
         ];
     }
 
@@ -63,7 +63,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $this->withFactories(__DIR__.'/factories');
 
         $this->artisan('vendor:publish', [
-            '--provider' => 'Grafite\Cms\GrafiteCmsProvider',
+            '--provider' => 'SierraTecnologia\Cms\SierraTecnologiaCmsProvider',
             '--force' => true,
         ]);
         $this->artisan('migrate', [

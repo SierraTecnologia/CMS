@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Services;
+namespace SierraTecnologia\Cms\Services;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
-use Grafite\Cms\Models\Analytics;
+use SierraTecnologia\Cms\Models\Analytics;
 
 class AnalyticsService
 {

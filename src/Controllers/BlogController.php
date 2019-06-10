@@ -1,15 +1,15 @@
 <?php
 
-namespace Grafite\Cms\Controllers;
+namespace SierraTecnologia\Cms\Controllers;
 
 use Cms;
-use Grafite\Cms\Models\Blog;
+use SierraTecnologia\Cms\Models\Blog;
 use Illuminate\Http\Request;
-use Grafite\Cms\Requests\BlogRequest;
-use Grafite\Cms\Services\ValidationService;
-use Grafite\Cms\Repositories\BlogRepository;
+use SierraTecnologia\Cms\Requests\BlogRequest;
+use SierraTecnologia\Cms\Services\ValidationService;
+use SierraTecnologia\Cms\Repositories\BlogRepository;
 
-class BlogController extends GrafiteCmsController
+class BlogController extends SierraTecnologiaCmsController
 {
     public function __construct(BlogRepository $repository)
     {

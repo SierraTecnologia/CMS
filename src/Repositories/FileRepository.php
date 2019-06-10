@@ -1,13 +1,13 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
 use Auth;
 use Config;
 use CryptoService;
-use Grafite\Cms\Models\File;
-use Grafite\Cms\Repositories\CmsRepository;
-use Grafite\Cms\Services\FileService;
+use SierraTecnologia\Cms\Models\File;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Services\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class FileRepository extends CmsRepository

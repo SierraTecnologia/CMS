@@ -1,9 +1,9 @@
 <?php
 
-namespace Grafite\Cms\Repositories;
+namespace SierraTecnologia\Cms\Repositories;
 
-use Grafite\Cms\Models\Menu;
-use Grafite\Cms\Repositories\CmsRepository;
+use SierraTecnologia\Cms\Models\Menu;
+use SierraTecnologia\Cms\Repositories\CmsRepository;
 use Illuminate\Support\Facades\Schema;
 
 class MenuRepository extends CmsRepository

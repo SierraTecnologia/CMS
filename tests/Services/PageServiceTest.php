@@ -2,8 +2,8 @@
 
 namespace Tests\Services;
 
-use Grafite\Cms\Models\Page;
-use Grafite\Cms\Services\PageService;
+use SierraTecnologia\Cms\Models\Page;
+use SierraTecnologia\Cms\Services\PageService;
 use Tests\TestCase;
 
 class PageServiceTest extends TestCase

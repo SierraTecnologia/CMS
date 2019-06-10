@@ -3,10 +3,10 @@
     $routePrefix = config('cms.backend-route-prefix', 'cms');
 
     Route::group(['middleware' => 'web'], function () use ($routePrefix) {
-        Route::get($routePrefix, 'GrafiteCmsFeatureController@sendHome');
+        Route::get($routePrefix, 'SierraTecnologiaCmsFeatureController@sendHome');
         Route::get('{module}/rss', 'RssController@index');
         Route::get('site-map', 'SiteMapController@index');
-        Route::get($routePrefix.'/hero-images/delete/{entity}/{entity_id}', 'GrafiteCmsFeatureController@deleteHero');
+        Route::get($routePrefix.'/hero-images/delete/{entity}/{entity_id}', 'SierraTecnologiaCmsFeatureController@deleteHero');
 
         /*
         |--------------------------------------------------------------------------
@@ -14,7 +14,7 @@
         |--------------------------------------------------------------------------
         */
 
-        Route::get($routePrefix.'/language/set/{language}', 'GrafiteCmsFeatureController@setLanguage');
+        Route::get($routePrefix.'/language/set/{language}', 'SierraTecnologiaCmsFeatureController@setLanguage');
 
         /*
         |--------------------------------------------------------------------------
@@ -64,9 +64,9 @@
                 |--------------------------------------------------------------------------
                 */
 
-                Route::get('preview/{entity}/{entityId}', 'GrafiteCmsFeatureController@preview');
-                Route::get('rollback/{entity}/{entityId}', 'GrafiteCmsFeatureController@rollback');
-                Route::get('revert/{id}', 'GrafiteCmsFeatureController@revert');
+                Route::get('preview/{entity}/{entityId}', 'SierraTecnologiaCmsFeatureController@preview');
+                Route::get('rollback/{entity}/{entityId}', 'SierraTecnologiaCmsFeatureController@rollback');
+                Route::get('revert/{id}', 'SierraTecnologiaCmsFeatureController@revert');
 
                 /*
                 |--------------------------------------------------------------------------

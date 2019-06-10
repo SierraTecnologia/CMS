@@ -1,10 +1,10 @@
 <?php
 
-namespace Grafite\Cms\Services\Traits;
+namespace SierraTecnologia\Cms\Services\Traits;
 
-use Grafite\Cms\Repositories\PromotionRepository;
-use Grafite\Cms\Repositories\WidgetRepository;
-use Grafite\Cms\Services\FileService;
+use SierraTecnologia\Cms\Repositories\PromotionRepository;
+use SierraTecnologia\Cms\Repositories\WidgetRepository;
+use SierraTecnologia\Cms\Services\FileService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
@@ -92,7 +92,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Grafite\Cms\Models\Image')->find($id)) {
+        if ($image = app('SierraTecnologia\Cms\Models\Image')->find($id)) {
             $img = $image->url;
         }
 
@@ -110,7 +110,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Grafite\Cms\Models\Image')->find($id)) {
+        if ($image = app('SierraTecnologia\Cms\Models\Image')->find($id)) {
             $img = $image->url;
         }
 
