@@ -21,7 +21,7 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "graham-campbell/markdown": "^10.0",
         "intervention/image": "^2.4",
-        "stichoza/google-translate-php": "^4.0",
+        "ricardosierra/translation": "^3.0",
         "donatj/phpuseragentparser": "^0.5.3"
     },
     "require-dev": {

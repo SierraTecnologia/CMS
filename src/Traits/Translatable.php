@@ -4,7 +4,7 @@ namespace SierraTecnologia\Cms\Traits;
 
 use SierraTecnologia\Cms\Models\Translation;
 use SierraTecnologia\Cms\Services\CmsService;
-use Stichoza\GoogleTranslate\TranslateClient;
+use RicardoSierra\Translation\TranslateClient;
 use SierraTecnologia\Cms\Repositories\TranslationRepository;
 
 trait Translatable
