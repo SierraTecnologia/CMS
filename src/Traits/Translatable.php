@@ -4,7 +4,7 @@ namespace SierraTecnologia\Cms\Traits;
 
 use SierraTecnologia\Cms\Models\Translation;
 use SierraTecnologia\Cms\Services\CmsService;
-use RicardoSierra\Translation\TranslateClient;
+use RicardoSierra\Translation\GoogleTranslate;
 use SierraTecnologia\Cms\Repositories\TranslationRepository;
 
 trait Translatable
@@ -92,7 +92,7 @@ trait Translatable
 
             foreach (config('cms.languages') as $code => $language) {
                 if ($code != config('cms.default-language')) {
-                    $translateClient = new TranslateClient(config('cms.default-language'), $code);
+                    $translateClient = new GoogleTranslate(config('cms.default-language'), $code);
                     $translation = [
                         'lang' => $code,
                         'template' => 'show',
