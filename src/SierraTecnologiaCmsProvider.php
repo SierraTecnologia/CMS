@@ -3,8 +3,8 @@
 namespace SierraTecnologia\Cms;
 
 use Cms;
-use Devfactory\Minify\Facades\MinifyFacade;
-use Devfactory\Minify\MinifyServiceProvider;
+use RicardoSierra\Minify\Facades\MinifyFacade;
+use RicardoSierra\Minify\MinifyServiceProvider;
 use SierraTecnologia\Builder\SierraTecnologiaBuilderProvider;
 use SierraTecnologia\Cms\Console\Keys;
 use SierraTecnologia\Cms\Console\ModuleComposer;

@@ -3,7 +3,7 @@
 namespace SierraTecnologia\Cms\Middleware;
 
 use Closure;
-use SierraTecnologia\Cms\Services\AnalyticsService;
+use Tracking\Services\AnalyticsService;
 
 class SierraTecnologiaCmsAnalytics
 {

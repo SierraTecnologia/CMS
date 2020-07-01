@@ -3,22 +3,22 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePagesTable extends Migration
+class CreateCmsBlogsTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create(config('cms.db-prefix', '').'pages', function (Blueprint $table) {
+        Schema::create(config('cms.db-prefix', '').'blogs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('url');
             $table->text('entry')->nullable();
+            $table->string('tags')->nullable();
+            $table->boolean('is_published')->default(0);
             $table->string('seo_description')->nullable();
             $table->string('seo_keywords')->nullable();
-            $table->boolean('is_published')->default(0);
-            $table->nullableTimestamps();
+            $table->string('url');
         });
     }
 
@@ -27,6 +27,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop(config('cms.db-prefix', '').'pages');
+        Schema::drop(config('cms.db-prefix', '').'blogs');
     }
 }

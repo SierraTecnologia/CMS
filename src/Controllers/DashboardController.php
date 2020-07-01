@@ -2,7 +2,7 @@
 
 namespace SierraTecnologia\Cms\Controllers;
 
-use SierraTecnologia\Cms\Services\AnalyticsService;
+use Tracking\Services\AnalyticsService;
 use Illuminate\Support\Facades\Schema;
 use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;
