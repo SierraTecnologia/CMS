@@ -3,11 +3,11 @@
 namespace SierraTecnologia\Cms\Models;
 
 use SierraTecnologia\Cms\Models\CmsModel;
-use SierraTecnologia\Cms\Traits\Translatable;
+use RicardoSierra\Translation\Traits\HasTranslations;
 
 class Widget extends CmsModel
 {
-    use Translatable;
+    use HasTranslations;
 
     public $table = 'widgets';
 

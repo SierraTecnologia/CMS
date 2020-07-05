@@ -4,12 +4,12 @@ namespace SierraTecnologia\Cms\Models;
 
 use SierraTecnologia\Cms\Models\CmsModel;
 use SierraTecnologia\Cms\Services\Normalizer;
-use SierraTecnologia\Cms\Traits\Translatable;
+use RicardoSierra\Translation\Traits\HasTranslations;
 use Illuminate\Support\Carbon;
 
 class Promotion extends CmsModel
 {
-    use Translatable;
+    use HasTranslations;
 
     public $table = 'promotions';
 
