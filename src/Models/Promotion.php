@@ -4,7 +4,7 @@ namespace SierraTecnologia\Cms\Models;
 
 use SierraTecnologia\Cms\Models\CmsModel;
 use SierraTecnologia\Cms\Services\Normalizer;
-use RicardoSierra\Translation\Traits\HasTranslations;
+use Translation\Traits\HasTranslations;
 use Illuminate\Support\Carbon;
 
 class Promotion extends CmsModel

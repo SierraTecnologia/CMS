@@ -5,7 +5,7 @@ namespace SierraTecnologia\Cms\Models;
 use SierraTecnologia\Cms\Models\CmsModel;
 use SierraTecnologia\Cms\Models\Menu;
 use SierraTecnologia\Cms\Models\Page;
-use RicardoSierra\Translation\Traits\HasTranslations;
+use Translation\Traits\HasTranslations;
 
 class Link extends CmsModel
 {

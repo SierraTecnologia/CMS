@@ -3,7 +3,7 @@
 namespace SierraTecnologia\Cms\Models;
 
 use SierraTecnologia\Cms\Models\CmsModel;
-use RicardoSierra\Translation\Traits\HasTranslations;
+use Translation\Traits\HasTranslations;
 
 class FAQ extends CmsModel
 {
