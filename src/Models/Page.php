@@ -16,7 +16,7 @@ class Page extends CmsModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'title' => 'required',
         'url' => 'required',
     ];

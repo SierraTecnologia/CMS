@@ -12,7 +12,7 @@ class File extends CmsModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'location' => 'required',
     ];
 

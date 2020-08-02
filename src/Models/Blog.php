@@ -16,7 +16,7 @@ class Blog extends CmsModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'title' => 'required|string',
         'url' => 'required|string',
     ];

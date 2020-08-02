@@ -17,5 +17,5 @@ class Archive extends CmsModel
         'entity_data',
     ];
 
-    public static $rules = [];
+    public $rules = [];
 }

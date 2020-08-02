@@ -15,7 +15,7 @@ class FAQ extends CmsModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'question' => 'required',
         'answer' => 'required',
     ];

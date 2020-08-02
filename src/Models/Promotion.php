@@ -17,7 +17,7 @@ class Promotion extends CmsModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'slug' => 'required',
     ];
 

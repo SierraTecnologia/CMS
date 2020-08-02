@@ -15,7 +15,7 @@ class Widget extends CmsModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'name' => 'required',
         'slug' => 'required',
     ];

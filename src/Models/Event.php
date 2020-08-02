@@ -16,7 +16,7 @@ class Event extends CmsModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'title' => 'required',
     ];
 

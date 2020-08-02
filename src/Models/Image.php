@@ -26,7 +26,7 @@ class Image extends CmsModel
         'js_url',
     ];
 
-    public static $rules = [
+    public $rules = [
         'location' => 'mimes:jpeg,jpg,bmp,png,gif',
     ];
 
