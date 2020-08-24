@@ -7,7 +7,7 @@ use SierraTecnologia\Cms\Services\CryptoService;
 
 class CryptoServiceTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

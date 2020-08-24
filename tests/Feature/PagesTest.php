@@ -6,7 +6,7 @@ use Tests\TestCase;
 
 class PagesTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->withoutMiddleware();

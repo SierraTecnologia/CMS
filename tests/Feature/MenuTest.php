@@ -6,7 +6,7 @@ use Tests\TestCase;
 
 class MenuTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->withoutMiddleware();

@@ -57,7 +57,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Setup the test environment.
      */
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->withFactories(__DIR__.'/factories');
