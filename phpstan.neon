@@ -1,0 +1,17 @@
+parameters:
+    level: 5
+    paths:
+        - src
+    excludePaths:
+        - src/Migrations
+        - src/Assets
+        - src/PublishedAssets
+        - src/Views
+        - src/Templates
+    ignoreErrors:
+        # Allow dynamic properties in Laravel models
+        - '#Access to an undefined property [a-zA-Z0-9\\_]+::\$[a-zA-Z0-9_]+#'
+        # Allow missing return types for Laravel framework methods
+        - '#Method [a-zA-Z0-9\\_]+::(boot|register)\(\) has no return type specified#'
+    checkMissingIterableValueType: false
+    reportUnmatchedIgnoredErrors: false

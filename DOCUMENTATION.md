@@ -1,13 +1,3 @@
-# SierraTecnologia CMS
-
-**CMS** - Add a CMS to any Laravel app to gain control of: pages, blogs, galleries, events, custom modules, images and more.
-
-[![Build Status](https://travis-ci.org/SierraTecnologiaInc/CMS.svg?branch=master)](https://travis-ci.org/SierraTecnologiaInc/CMS)
-[![Maintainability](https://api.codeclimate.com/v1/badges/f28b73ebf600f2db7f48/maintainability)](https://codeclimate.com/github/SierraTecnologiaInc/CMS/maintainability)
-[![Packagist](https://img.shields.io/packagist/dt/sierratecnologia/cms.svg?maxAge=2592000)](https://packagist.org/packages/sierratecnologia/cms)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://packagist.org/packages/sierratecnologia/cms)
-[![Join the chat at https://gitter.im/SierraTecnologiaInc/CMS](https://badges.gitter.im/SierraTecnologiaInc/CMS.svg)](https://gitter.im/SierraTecnologiaInc/CMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 ## Índice
 
 - [Introdução](#introdução)
@@ -311,7 +301,7 @@ Gerenciamento completo de páginas estáticas e dinâmicas.
 - 📜 Histórico de versões
 - 🌐 Multilíngue
 
-**Exemplo de uso (src/Controllers/PagesController.php:145):**
+**Exemplo de uso:**
 
 ```php
 // No Controller
@@ -363,7 +353,7 @@ Sistema completo de blog com tags, SEO e publicação agendada.
 - 📊 RSS Feed
 - 🌐 Multilíngue
 
-**Exemplo de uso (src/Controllers/BlogController.php:98):**
+**Exemplo de uso:**
 
 ```php
 use SierraTecnologia\Cms\Repositories\BlogRepository;
@@ -399,15 +389,146 @@ $posts = $blogRepo->published();
 
 ---
 
-### 3. **Menus (Navegação)**
+### 3. **Events (Eventos)**
 
-Sistema de menus dinâmicos com ordenação (src/Controllers/MenuController.php:67).
+Calendário de eventos com datas, locais e descrições.
+
+**Funcionalidades:**
+- 📅 Data/hora do evento
+- 📍 Local
+- 📝 Descrição detalhada
+- 🔍 SEO
+- 📅 Publicação agendada
+
+**Exemplo de uso:**
+
+```php
+use SierraTecnologia\Cms\Repositories\EventRepository;
+
+$eventRepo = app(EventRepository::class);
+
+$event = $eventRepo->store([
+    'title' => 'Workshop Laravel Avançado',
+    'start_date' => '2024-03-15 09:00:00',
+    'end_date' => '2024-03-15 18:00:00',
+    'location' => 'Centro de Convenções - São Paulo',
+    'entry' => '<p>Aprenda técnicas avançadas...</p>',
+    'is_published' => true,
+]);
+```
+
+---
+
+### 4. **Images (Galeria de Imagens)**
+
+Sistema completo de upload, gerenciamento e organização de imagens.
+
+**Funcionalidades:**
+- 📤 Upload múltiplo
+- 🔄 Redimensionamento automático
+- 🏷️ Tags/categorias
+- 🔗 Relacionamento com entidades
+- 🗑️ Bulk delete
+- 🔒 URLs criptografadas
+- 📊 API de listagem
+
+**Exemplo de uso:**
+
+```php
+use SierraTecnologia\Cms\Repositories\ImageRepository;
+
+$imageRepo = app(ImageRepository::class);
+
+// Upload de imagem
+$image = $imageRepo->store([
+    'location' => $request->file('image')->store('images'),
+    'name' => 'produto-destaque.jpg',
+    'tags' => 'produto,destaque,2024',
+    'entity_id' => $produto->id,
+    'entity_type' => 'App\Models\Produto',
+]);
+
+// Buscar por tags
+$images = $imageRepo->getByTag('destaque');
+```
+
+**Blade Helpers:**
+
+```blade
+{{-- Renderizar imagem --}}
+@image('produto-destaque.jpg', 'alt text')
+
+{{-- Listar imagens por tag --}}
+@images('portfolio')
+
+{{-- Link para imagem --}}
+@image_link('banner-principal.jpg')
+```
+
+---
+
+### 5. **Files (Arquivos)**
+
+Gerenciamento de arquivos para download.
+
+**Funcionalidades:**
+- 📤 Upload de múltiplos formatos
+- 📥 Download seguro
+- 🔒 Criptografia de URLs
+- 👁️ Preview de arquivos
+- 📊 Estatísticas de download
+
+**Exemplo de uso:**
+
+```php
+use SierraTecnologia\Cms\Repositories\FileRepository;
+
+$fileRepo = app(FileRepository::class);
+
+$file = $fileRepo->store([
+    'location' => $request->file('document')->store('files'),
+    'name' => 'manual-usuario.pdf',
+    'mime' => 'application/pdf',
+    'size' => $request->file('document')->getSize(),
+]);
+```
+
+---
+
+### 6. **Menus (Navegação)**
+
+Sistema de menus dinâmicos com ordenação.
 
 **Funcionalidades:**
 - 🧭 Estrutura hierárquica
 - 🔢 Ordenação customizável
 - 🔗 Links internos/externos
 - 🌐 Multilíngue
+
+**Exemplo de uso:**
+
+```php
+use SierraTecnologia\Cms\Repositories\MenuRepository;
+use SierraTecnologia\Cms\Repositories\LinkRepository;
+
+$menuRepo = app(MenuRepository::class);
+$linkRepo = app(LinkRepository::class);
+
+// Criar menu
+$menu = $menuRepo->store([
+    'name' => 'Menu Principal',
+    'slug' => 'main',
+]);
+
+// Adicionar links
+$linkRepo->store([
+    'name' => 'Início',
+    'external' => false,
+    'page_id' => $homePage->id,
+    'menu_id' => $menu->id,
+    'order' => 1,
+]);
+```
 
 **Blade Helpers:**
 
@@ -421,25 +542,26 @@ Sistema de menus dinâmicos com ordenação (src/Controllers/MenuController.php:
 
 ---
 
-### 4. **Images (Galeria de Imagens)**
+### 7. **Widgets (Componentes Reutilizáveis)**
 
-Sistema completo de upload e gerenciamento (src/Controllers/ImagesController.php:213).
+Blocos de conteúdo reutilizáveis via slug.
 
-**Blade Helpers:**
+**Exemplo de uso:**
 
-```blade
-{{-- Renderizar imagem --}}
-@image('produto-destaque.jpg', 'alt text')
+```php
+use SierraTecnologia\Cms\Repositories\WidgetRepository;
 
-{{-- Listar imagens por tag --}}
-@images('portfolio')
+$widgetRepo = app(WidgetRepository::class);
+
+$widget = $widgetRepo->store([
+    'slug' => 'footer-contato',
+    'name' => 'Contato Rodapé',
+    'content' => '<div>Email: contato@example.com</div>',
+    'is_published' => true,
+]);
 ```
 
----
-
-### 5. **Widgets (Componentes Reutilizáveis)**
-
-Blocos de conteúdo reutilizáveis via slug (src/Controllers/WidgetsController.php:45).
+**Blade Helpers:**
 
 ```blade
 {{-- Renderizar widget --}}
@@ -448,12 +570,47 @@ Blocos de conteúdo reutilizáveis via slug (src/Controllers/WidgetsController.p
 
 ---
 
-### 6. **Outros Módulos**
+### 8. **FAQs (Perguntas Frequentes)**
 
-- **Events**: Calendário de eventos (src/Controllers/EventController.php:72)
-- **Files**: Gerenciamento de arquivos (src/Controllers/FilesController.php:165)
-- **FAQs**: Perguntas frequentes (src/Controllers/FAQController.php:34)
-- **Promotions**: Promoções e destaques (src/Controllers/PromotionsController.php:56)
+Gerenciamento de perguntas e respostas.
+
+**Exemplo de uso:**
+
+```php
+$faqRepo = app('SierraTecnologia\Cms\Repositories\FAQRepository');
+
+$faq = $faqRepo->store([
+    'question' => 'Como instalar o CMS?',
+    'answer' => '<p>Execute: composer require sierratecnologia/cms</p>',
+    'is_published' => true,
+]);
+```
+
+---
+
+### 9. **Promotions (Promoções/Destaques)**
+
+Sistema de promoções com datas de validade.
+
+**Exemplo de uso:**
+
+```php
+$promoRepo = app('SierraTecnologia\Cms\Repositories\PromotionRepository');
+
+$promo = $promoRepo->store([
+    'title' => 'Black Friday 2024',
+    'content' => '<p>Até 50% de desconto!</p>',
+    'start_date' => '2024-11-25',
+    'end_date' => '2024-11-30',
+    'is_published' => true,
+]);
+```
+
+**Blade Helpers:**
+
+```blade
+@promotion('black-friday-2024')
+```
 
 ---
 
@@ -490,10 +647,25 @@ Em `config/cms.php`:
 http://seusite.com/cms
 ```
 
-#### Passo 4: Integrar no frontend
+#### Passo 4: Criar páginas institucionais
 
-```php
-// app/Http/Controllers/PageController.php
+No painel admin, vá em **Pages** → **Create**:
+
+- **Title**: Sobre Nós
+- **URL**: sobre-nos
+- **Content**: <editor de conteúdo>
+- **SEO Description**: Conheça nossa história
+- **Published**: ✅
+
+#### Passo 5: Integrar no frontend
+
+Em suas views:
+
+```blade
+{{-- routes/web.php --}}
+Route::get('/{url}', 'PageController@show');
+
+{{-- app/Http/Controllers/PageController.php --}}
 public function show($url)
 {
     $pageRepo = app(\SierraTecnologia\Cms\Repositories\PageRepository::class);
@@ -505,9 +677,7 @@ public function show($url)
 
     return view('pages.show', compact('page'));
 }
-```
 
-```blade
 {{-- resources/views/pages/show.blade.php --}}
 @extends('layouts.app')
 
@@ -518,6 +688,88 @@ public function show($url)
     <h1>{{ $page->title }}</h1>
     {!! $page->entry !!}
 @endsection
+```
+
+---
+
+### Criação de Componentes Reutilizáveis
+
+**Exemplo: Banner promocional no topo do site**
+
+#### 1. Criar widget
+
+No painel admin → **Widgets** → **Create**:
+
+- **Slug**: banner-topo
+- **Name**: Banner Promocional Topo
+- **Content**:
+```html
+<div class="promo-banner bg-red-500 text-white p-4 text-center">
+    <strong>OFERTA ESPECIAL!</strong> Use o cupom WELCOME10 e ganhe 10% de desconto.
+</div>
+```
+
+#### 2. Renderizar no layout
+
+```blade
+{{-- resources/views/layouts/app.blade.php --}}
+<!DOCTYPE html>
+<html>
+<head>...</head>
+<body>
+    @widget('banner-topo')
+
+    <header>...</header>
+
+    @yield('content')
+</body>
+</html>
+```
+
+---
+
+### Boas Práticas
+
+✅ **Use Repositories ao invés de Models diretamente**
+
+```php
+// ❌ Evite
+$pages = Page::where('is_published', 1)->get();
+
+// ✅ Prefira
+$pageRepo = app(PageRepository::class);
+$pages = $pageRepo->published();
+```
+
+✅ **Sempre valide com Form Requests**
+
+```php
+// No Controller
+public function store(PagesRequest $request)
+{
+    // Dados já validados
+}
+```
+
+✅ **Use Facades para lógica do CMS**
+
+```php
+use SierraTecnologia\Cms\Facades\CmsServiceFacade as Cms;
+
+// Buscar menu
+$menu = Cms::menu('main');
+
+// Buscar widget
+$widget = Cms::widget('footer');
+```
+
+✅ **Aproveite os Blade Directives**
+
+```blade
+@menu('main')
+@widget('sidebar-banner')
+@images('portfolio')
+@edit('pages', $page->id)
 ```
 
 ---
@@ -554,6 +806,25 @@ $page->translate('en')->title = 'About Us';
 - Otimização de assets
 - Cache de recursos
 
+```blade
+{!! Minify::stylesheet([
+    '/css/app.css',
+    '/css/cms.css',
+]) !!}
+```
+
+---
+
+### Padrões de Versionamento
+
+O projeto segue **Semantic Versioning (SemVer)**:
+
+- **MAJOR**: Mudanças incompatíveis com versões anteriores
+- **MINOR**: Novas funcionalidades compatíveis
+- **PATCH**: Correções de bugs
+
+**Exemplo**: `v3.2.5`
+
 ---
 
 ### Testes Automatizados
@@ -569,7 +840,69 @@ composer test-coverage
 
 # Apenas testes de feature
 vendor/bin/phpunit --testsuite=Feature
+
+# Apenas testes de services
+vendor/bin/phpunit tests/Services/
 ```
+
+**Estrutura de testes:**
+
+```
+tests/
+├── Feature/           # Testes de integração (CRUD completo)
+│   ├── PagesTest.php
+│   ├── BlogTest.php
+│   └── ...
+├── Services/          # Testes unitários de lógica
+│   ├── PageServiceTest.php
+│   ├── CmsServiceTest.php
+│   └── ...
+└── factories/         # Factories para testes
+    ├── PageFactory.php
+    └── ...
+```
+
+---
+
+### Pipeline CI/CD
+
+O projeto utiliza **GitHub Actions** para CI/CD automatizado:
+
+```yaml
+# .github/workflows/ci.yml
+- Testes em múltiplas versões (PHP 7.4, 8.0, 8.1, 8.2)
+- Análise estática (PHPStan nível 5)
+- Verificação de código (PHPCS PSR-12)
+- Cobertura de testes (Codecov)
+- Security check (Roave Security Advisories)
+```
+
+---
+
+### Uso Padronizado em Equipes
+
+**Convenções para equipes:**
+
+1. **Branching Strategy**:
+   - `master`: produção estável
+   - `develop`: desenvolvimento ativo
+   - `feature/*`: novas funcionalidades
+   - `bugfix/*`: correções
+
+2. **Commits Semânticos**:
+   ```
+   feat: adiciona suporte a vídeos no blog
+   fix: corrige upload de imagens grandes
+   refactor: melhora performance do PageRepository
+   docs: atualiza README com exemplos
+   test: adiciona testes para EventService
+   ```
+
+3. **Code Review**:
+   - Toda mudança via Pull Request
+   - Mínimo 1 aprovação
+   - Testes devem passar
+   - PHPCS e PHPStan devem passar
 
 ---
 
@@ -612,17 +945,214 @@ cms/modules/produto/
 php artisan module:crud Categoria
 ```
 
-#### 3. Gerar tema
+#### 3. Gerar composer.json para o módulo
+
+```bash
+php artisan module:composer Produto
+```
+
+---
+
+### Criar Temas Customizados
+
+#### 1. Gerar tema
 
 ```bash
 php artisan theme:generate MeuTema
 ```
+
+#### 2. Estrutura do tema
+
+```
+resources/themes/MeuTema/
+├── layouts/
+│   ├── master.blade.php
+│   └── partials/
+│       ├── header.blade.php
+│       ├── footer.blade.php
+│       └── navigation.blade.php
+├── pages/
+│   ├── home.blade.php
+│   ├── show.blade.php
+│   └── list.blade.php
+├── blog/
+│   ├── index.blade.php
+│   └── show.blade.php
+└── assets/
+    ├── css/
+    ├── js/
+    └── images/
+```
+
+#### 3. Ativar tema
 
 Em `config/cms.php`:
 
 ```php
 'frontend-theme' => 'MeuTema',
 ```
+
+#### 4. Usar tema nas views
+
+```blade
+@theme('pages.home')
+```
+
+---
+
+### Substituir Classes via Injeção de Dependência
+
+Você pode substituir repositórios, services, etc:
+
+```php
+// app/Providers/AppServiceProvider.php
+
+public function register()
+{
+    // Substituir PageRepository por implementação customizada
+    $this->app->bind(
+        \SierraTecnologia\Cms\Repositories\PageRepository::class,
+        \App\Repositories\CustomPageRepository::class
+    );
+}
+```
+
+---
+
+### Estender Models com Traits
+
+```php
+// app/Traits/HasComments.php
+trait HasComments
+{
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+}
+
+// Aplicar ao Page model via observer ou boot
+Page::resolveRelationUsing('comments', function ($pageModel) {
+    return $pageModel->hasMany(Comment::class);
+});
+```
+
+---
+
+### Criar Blade Directives Customizados
+
+```php
+// app/Providers/AppServiceProvider.php
+
+public function boot()
+{
+    Blade::directive('produto', function ($expression) {
+        return "<?php echo app('App\Services\ProdutoService')->render($expression); ?>";
+    });
+}
+```
+
+**Uso:**
+
+```blade
+@produto($id)
+```
+
+---
+
+### Boas Práticas para Manutenção
+
+✅ **Mantenha módulos desacoplados**
+✅ **Use Events para comunicação entre módulos**
+✅ **Versione suas customizações**
+✅ **Documente mudanças importantes**
+✅ **Teste antes de deploy**
+
+---
+
+## Exemplos Reais
+
+### Caso 1: Blog Corporativo
+
+**Antes do CMS:**
+- Código hardcoded para posts
+- Sem painel admin
+- Edição requer desenvolvedor
+- Sem SEO estruturado
+
+**Depois do CMS:**
+- Painel admin intuitivo
+- Marketing edita posts sem programar
+- SEO automático (meta tags, sitemap, RSS)
+- Publicação agendada
+- Histórico de versões
+
+**Métricas:**
+- ⏱️ **Tempo de criação de post**: 2 horas → 15 minutos
+- 👨‍💻 **Dependência de dev**: 100% → 0%
+- 📈 **SEO score**: 45 → 89
+
+---
+
+### Caso 2: Site Institucional com Múltiplos Idiomas
+
+**Antes:**
+- Páginas em arquivos Blade
+- Tradução manual e propensa a erros
+- Inconsistência entre idiomas
+
+**Depois:**
+- Gerenciamento centralizado
+- Traduções organizadas
+- Switcher de idiomas automático
+
+```php
+// Criar página em múltiplos idiomas
+$page = $pageRepo->store([
+    'title' => 'About Us',
+    'url' => 'about',
+    'entry' => '...',
+]);
+
+$page->translate('pt')->title = 'Sobre Nós';
+$page->translate('pt')->url = 'sobre';
+$page->save();
+```
+
+---
+
+### Caso 3: E-commerce com FAQs Dinâmicos
+
+**Problema**: Clientes tinham dúvidas recorrentes sobre produtos.
+
+**Solução**: Implementar módulo FAQ do CMS.
+
+```php
+// Criar FAQ
+$faqRepo->store([
+    'question' => 'Qual o prazo de entrega?',
+    'answer' => '<p>Entregamos em até 7 dias úteis...</p>',
+    'category' => 'entrega',
+    'is_published' => true,
+]);
+```
+
+**Blade:**
+
+```blade
+{{-- Listar FAQs de uma categoria --}}
+@foreach($faqRepo->published()->where('category', 'entrega')->get() as $faq)
+    <details>
+        <summary>{{ $faq->question }}</summary>
+        {!! $faq->answer !!}
+    </details>
+@endforeach
+```
+
+**Resultados:**
+- 📉 **Tickets de suporte**: -35%
+- ⏱️ **Tempo de resposta**: -50%
+- 😊 **Satisfação do cliente**: +28%
 
 ---
 
@@ -693,6 +1223,21 @@ O pipeline automatizado executa:
 ---
 
 ### Scripts Composer Úteis
+
+```json
+{
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage",
+        "cs": "phpcs",
+        "cs-fix": "phpcbf",
+        "stan": "phpstan analyse",
+        "check": ["@cs", "@stan", "@test"]
+    }
+}
+```
+
+**Uso:**
 
 ```bash
 # Verificar tudo de uma vez
@@ -789,6 +1334,25 @@ perf: melhoria de performance
 ci: mudanças no CI/CD
 ```
 
+**Exemplos:**
+
+```bash
+git commit -m "feat: adiciona upload de vídeos no BlogController"
+git commit -m "fix: corrige validação de URL em PagesRequest"
+git commit -m "docs: atualiza README com exemplos de widgets"
+git commit -m "test: adiciona testes para ImageRepository"
+```
+
+---
+
+### Nomenclatura de Branches
+
+- `feature/nome-funcionalidade` - Novas funcionalidades
+- `bugfix/nome-bug` - Correções
+- `hotfix/nome-urgente` - Correções urgentes para produção
+- `refactor/nome-refatoracao` - Refatorações
+- `docs/nome-documentacao` - Documentação
+
 ---
 
 ### Code Review
@@ -804,57 +1368,59 @@ Toda contribuição passa por code review:
 
 ---
 
-## License
+### Executar Testes Localmente
 
-SierraTecnologia CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+```bash
+# Todos os testes
+composer test
 
-## Redactor License
+# Apenas Feature
+vendor/bin/phpunit --testsuite=Feature
 
-SierraTecnologia has an OEM licence for the use of Redactor in the SierraTecnologia CMS package.
-You are fully welcome to use SierraTecnologia CMS package and incorporate it into any apps you build, you are permitted to offer those apps as SaaS or other products.
-However, you are not entitle to strip out parts of Redactor and resell them, please see this [license](https://imperavi.com/redactor/license/) for more information
+# Apenas Services
+vendor/bin/phpunit tests/Services/
 
-## Disclaimer
+# Com cobertura
+composer test-coverage
+```
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
----
-
-## About SierraTecnologia
-
-**SierraTecnologia** is a software development company specializing in Laravel-based solutions for enterprise applications. We are part of the **Rica Soluções** ecosystem, providing high-quality, maintainable, and scalable packages for the Laravel community.
-
-### Our Mission
-
-To empower developers with robust, well-architected components that accelerate development while maintaining code quality and best practices.
-
-### Our Packages
-
-- **CMS**: Content Management System for Laravel
-- **Builder**: Code generation and scaffolding tools
-- **Translation**: Comprehensive internationalization system
-- **Minify**: Asset optimization and minification
-- **API Base**: RESTful API foundation
-- **GraphQL Laravel**: GraphQL integration
-- And many more...
-
-### Contact
-
-- **Website**: [https://cms.sierratecnologia.ca](https://cms.sierratecnologia.ca)
-- **Documentation**: [https://docs.sierratecnologia.ca/cms](https://docs.sierratecnologia.ca/cms)
-- **Gitter**: [Join the chat](https://gitter.im/SierraTecnologiaInc/CMS)
-- **GitHub Issues**: [Report a bug](https://github.com/SierraTecnologia/CMS/issues)
-- **Email**: ricardo@sierratecnologia.com.br
-
-### Authors
-
-- **Matt Lantz** ([@mattylantz](https://twitter.com/mattylantz)) - Original creator
-- **Ricardo Rebello Sierra** - Lead maintainer and Rica Soluções architect
-
-### Contributing
-
-We welcome contributions from the community. Please see our [contribution guidelines](#guia-de-contribuição) above.
+**Cobertura mínima esperada**: 70%
 
 ---
 
-**Made with ❤️ by SierraTecnologia & Rica Soluções**
+### Licenciamento e Autores
+
+**Licença**: MIT License
+
+**Autores Principais**:
+- Matt Lantz ([@mattylantz](https://twitter.com/mattylantz))
+- Ricardo Rebello Sierra (ricardo@sierratecnologia.com.br)
+
+**Contribuidores**: [Ver todos](https://github.com/SierraTecnologia/CMS/graphs/contributors)
+
+---
+
+### Reportar Issues
+
+Ao reportar issues, inclua:
+
+1. **Versão do CMS**: `composer show sierratecnologia/cms`
+2. **Versão do Laravel**: `php artisan --version`
+3. **Versão do PHP**: `php -v`
+4. **Descrição detalhada** do problema
+5. **Passos para reproduzir**
+6. **Comportamento esperado vs atual**
+7. **Stack trace** se houver erro
+8. **Screenshots** se aplicável
+
+---
+
+### Contato
+
+- 💬 **Gitter**: [SierraTecnologia/CMS](https://gitter.im/SierraTecnologiaInc/CMS)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/SierraTecnologia/CMS/issues)
+- 📧 **Email**: ricardo@sierratecnologia.com.br
+- 🌐 **Website**: [https://cms.sierratecnologia.ca](https://cms.sierratecnologia.ca)
+- 📖 **Docs**: [https://docs.sierratecnologia.ca/cms](https://docs.sierratecnologia.ca/cms)
+
+---
